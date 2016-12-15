@@ -48,7 +48,6 @@ class DefaultController extends Controller
 		$phone = htmlentities(strip_tags($_POST['phone']));
 		$selectTypeUser = $_POST['select_type_user'];
 
-		if (isset($selectTypeUser)) {
 			switch ($selectTypeUser) {
 				case 2:
 					$isPremium =true;
@@ -63,8 +62,6 @@ class DefaultController extends Controller
 				$isProfessional =false;
 				break;
 			}
-
-		}
 
 		$password=$auth->hashPassword($_POST['password']);
 		$userData = $user->Insert([ 'lastName' => $lastName,
@@ -82,11 +79,10 @@ class DefaultController extends Controller
 
 		$auth->logUserIn($userData);
 
-		$avatar = $userData['id'] .'_' .$avatar;
-		$update = $user->Update(['avatar' => $avatar],$userData['id']);
-		var_dump($update);
-		if (isset($avatar)) {
-			var_dump($_FILES);
+		if (isset($avatar) && strlen($avatar)>0) {
+			$avatar = $userData['id'] .'_' .$avatar;
+			$update = $user->Update(['avatar' => $avatar],$userData['id']);
+
 			$file_name = $_FILES['fichier']['name'];
 			 $destination_folder = '../public/assets/img/avatar/' .$userData['id'] .'_'  .$file_name;
 			 $tmp = $_FILES['fichier']['tmp_name'];
@@ -96,8 +92,55 @@ class DefaultController extends Controller
 			 }
 		}
 
-		//$this->redirectToRoute('default_inscription');
+		$this->redirectToRoute('default_home');
 	}
 
+	/**
+ * Page connexion
+ */
+public function connexion()
+{
+	$this->show('default/connexion');
+}
+/**
+ * Page traitement connexion
+ */
+public function traitementConnexion()
+{
+	$auth = new Auth();
+	$usernameOrEmail = $_POST['identifiant'];
+	$plainPassword = $_POST['password'];
+
+	$userId = $auth->IsValidLoginInfo($usernameOrEmail,$plainPassword);
+
+	if ($userId !==0) {
+		$userModel = new UsersModel();
+		$user = $userModel->find($userId);
+		$auth->logUserIn($user);
+		//var_dump($user);
+		$this->redirectToRoute('default_home');
+		// if (isset($user)) {
+		// 	$this->redirectToRoute('admin_index');
+		// }
+		// else {
+		// 	$this->redirectToRoute('default_home');
+		// }
+
+	}
+	else {
+		$this->redirectToRoute('default_home');
+	}
+}
+
+/**
+ * Page traitement connexion
+ */
+public function deconnexion()
+{
+	$auth = new Auth();
+	$auth->logUserOut();
+	$this->redirectToRoute('default_home');
+
+}
 
 }
