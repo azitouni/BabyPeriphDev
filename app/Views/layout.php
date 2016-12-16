@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title><?= $this->e($title) ?></title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo $titrePage; ?></title>
+	<link href="img/baby.png" rel="icon">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/font-awesome/css/font-awesome.min.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">	
 </head>
-<body>
-	<div class="container">
-		<header>
-			<h1>W :: <?= $this->e($title) ?></h1>
+<body>	
+	<header class="container-fluid">
+    	<h1>W :: <?= $this->e($title) ?></h1>
 			<?php
 				if (!isset($_SESSION['user'])) {
 					echo '<li><a href="' .$this->url('default_inscription') .'" class="menu">
@@ -27,14 +30,115 @@
 				 <li><a href="' .$this->url('Annonce_allAnnonce', ["theme" => "vente"]) .'">Vente</a></li>
 				 <li><a href="' .$this->url('Annonce_allAnnonce', ["theme" => "service"]) .'">Services</a></li>';
 				 ?>
-		</header>
+		<div class="row banniere">
+			<div class="col-xs-offset-4 col-xs-8 col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9  ">
+				<ul class="bouton1 ">
+					<li class="item2"><a href="">Connexion </a></li>
+					<li class="item2"><a href="">Inscription</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row banniere">
+			<div class="col-xs-offset-1 col-xs-10  col-md-8 col-md-offset-2 logo"></div>
+		</div>
+		<div class="row ">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid menu">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Acceuil</a>
+					</div>
 
-		<section>
-			<?= $this->section('main_content') ?>
-		</section>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-		<footer>
-		</footer>
-	</div>
+						<ul class="nav navbar-nav main-menu">
+							<li class="nav-item"><a href="#">Location</a></li>
+							<li class="nav-item"><a href="#">Vente</a></li>
+							<li class="nav-item"><a href="#">Services</a></li>
+							<li class="nav-item"><a href="#">Déposer une annonce</a></li>
+		
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="contenu">
+				</div>
+			</div>
+		</div>
+		
+	</main>
+
+
+	<footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-2 col-md-offset-2 col-sm-6 footer-nav">
+					<h3 class="">Informations</h3>
+					<ul>
+						<li><a href="">Paiement sécurisé</a></li>
+						<li><a href="">Programme fidélité</a></li>
+						<li><a href="">Nos partenaires</a></li>
+						<li><a href="">Questions fréquentes</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
+					<h3 class="">A propos</h3>
+					<ul>
+						<li><a href="">Qui sommes nous ?</a></li>
+						<li><a href="">Avis clients</a></li>
+						<li><a href="">Mentions légales</a></li>
+						<li><a href="">Conditions générales</a></li>
+						<li><a href="">Contact</a></li>
+						<li><a href="">FAQ</a></li>
+						<li><a href="">Plan du site</a></li>
+
+					</ul>
+				</div>
+				<div class="col-xs-12 col-md-3 footer-nav text-center">
+					<h3 class="news">Newsletter</h3>
+					<p class="news">Inscrivez-vous et recevez des offres exclusives !</p>
+					<form class="">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">@</span>
+							<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						</div>
+						<div class="">
+							<input class="btn btn-default bouton-news" type="submit" name="">
+						</div>
+					</form>
+					<br>
+					<ul class="list-inline">
+						<li>
+							<a href="https://www.facebook.com/gino.robertot" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="img/facebook.png" alt=""></a>
+						</li>
+						<li>
+							<a href="#"><img class="img-taille" src="img/google plus.png" alt=""></a>
+						</li>
+						<li>
+							<a href="#"><img class="img-taille" src="img/linkdin.png" alt="" target="_blank"></a>
+						</li>
+					</ul>
+				</div> 
+			</div>                   
+		</div>
+
+</footer>
+
+<script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>
+<script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
+
 </body>
 </html>
