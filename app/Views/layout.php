@@ -8,12 +8,28 @@
 	<link href="img/baby.png" rel="icon">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/font-awesome/css/font-awesome.min.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
-	
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">	
 </head>
-<body>
-	
+<body>	
 	<header class="container-fluid">
+    	<h1>W :: <?= $this->e($title) ?></h1>
+			<?php
+				if (!isset($_SESSION['user'])) {
+					echo '<li><a href="' .$this->url('default_inscription') .'" class="menu">
+											<span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+								<li><a href="' .$this->url('default_connexion') .'"  class="menu">
+																	<span class="fa fa-plug"></span> Connexion</a></li>';
+				}
+				else{
+					echo '<p class="navbar-text menu">' .$_SESSION['user']['userName'] .'</p>
+											<li><a href="' .$this->url('default_deconnexion') .'"  class="menu">
+											<span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>';
+						}
+				 echo '
+				 <li><a href="'.$this->url('Annonce_allAnnonce', ["theme" => "location"]) .'">Location</a></li>
+				 <li><a href="' .$this->url('Annonce_allAnnonce', ["theme" => "vente"]) .'">Vente</a></li>
+				 <li><a href="' .$this->url('Annonce_allAnnonce', ["theme" => "service"]) .'">Services</a></li>';
+				 ?>
 		<div class="row banniere">
 			<div class="col-xs-offset-4 col-xs-8 col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9  ">
 				<ul class="bouton1 ">
@@ -41,15 +57,13 @@
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						
-						
+
 						<ul class="nav navbar-nav main-menu">
 							<li class="nav-item"><a href="#">Location</a></li>
 							<li class="nav-item"><a href="#">Vente</a></li>
 							<li class="nav-item"><a href="#">Services</a></li>
 							<li class="nav-item"><a href="#">Déposer une annonce</a></li>
-
-							
+		
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->
@@ -61,9 +75,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="contenu">
-
-
-				</div></p>
+				</div>
 			</div>
 		</div>
 		
@@ -122,7 +134,7 @@
 				</div> 
 			</div>                   
 		</div>
-	</div>
+
 </footer>
 
 <script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>
