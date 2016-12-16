@@ -44,7 +44,6 @@ class annonce extends \W\Model\Model {
     $this->image1 = $annonce['image1'];
     $this->image2 = $annonce['image2'];
     $this->image3 = $annonce['image3'];
-
   }
 
   public function getAnnonceByUserId($user_id){
@@ -86,7 +85,26 @@ class annonce extends \W\Model\Model {
   public function setRenouvelAnnonce($id){
   $annonce = $this->find($id);
   $updateAnnonce = $this->update(['dateCreation' => date("d-m-Y H:i:s")]);
-}
+  }
+  public function findAllAnnonceByTheme($theme)
+	{
+    switch ($theme) {
+      case 'vente':
+        $sql = 'SELECT a.*, u.city FROM annonce a join utilisateur u on a.idUtilisateur = u.id WHERE isVente = 1';
+        break;
+      case 'service':
+          $sql = 'SELECT a.*, u.city FROM annonce a join utilisateur u on a.idUtilisateur = u.id WHERE isService = 1';
+          break;
+      default:
+        $sql = 'SELECT a.*, u.city FROM annonce a join utilisateur u on a.idUtilisateur = u.id WHERE isLocation = 1';
+        break;
+    }
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
 
 }
 

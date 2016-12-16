@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?= $this->e($title) ?></title>
-
+	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
 <body>
@@ -16,20 +16,17 @@
 											<span class="glyphicon glyphicon-user"></span> Inscription</a></li>
 								<li><a href="' .$this->url('default_connexion') .'"  class="menu">
 																	<span class="fa fa-plug"></span> Connexion</a></li>';
-					// echo 'Non authentifié ';
-					// var_dump($_SESSION);
 				}
 				else{
 					echo '<p class="navbar-text menu">' .$_SESSION['user']['userName'] .'</p>
 											<li><a href="' .$this->url('default_deconnexion') .'"  class="menu">
 											<span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>';
-						// echo 'authentifié ';
-						// var_dump($_SESSION['user']['userName']);
 						}
+				 echo '
+				 <li><a href="'.$this->url('Annonce_allAnnonce', ["theme" => "location"]) .'">Location</a></li>
+				 <li><a href="' .$this->url('Annonce_allAnnonce', ["theme" => "vente"]) .'">Vente</a></li>
+				 <li><a href="' .$this->url('Annonce_allAnnonce', ["theme" => "service"]) .'">Services</a></li>';
 				 ?>
-			<!-- <form class="" action="<?= $this->url('default_deconnexion'); ?>">
-				<button type="submit" class="btn btn-danger fa fa-power-off" name="btnOff">disconnect</button>
-			</form> -->
 		</header>
 
 		<section>

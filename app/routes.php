@@ -8,8 +8,11 @@ $w_routes = array(
 	['POST', '/inscription', 'Default#traitementInscription', 'default_traitementInscription'],
 
 	/*Annoce*/
-	['GET', '/annonce', 'Annonce#index', 'Annonce_index'],//Créer annonce
-	['POST', '/annonce', 'Annonce#traitementAnnonce', 'annonce_traitementAnnonce'],
+	['GET', '/annonce', 'Annonce#index', 'Annonce_index'],//Créer nouvelle annonce
+	['POST', '/annonce', 'Annonce#traitementAnnonce', 'annonce_traitementAnnonce'],//save annonce in db
+	['GET', '/annonce', 'Annonce#myAnnonce', 'Annonce_myAnnonce'],//afficher annonces utilisateur
+	['GET', '/annonce/[:theme]', 'Annonce#allAnnonce', 'Annonce_allAnnonce'],//afficher toutes les annonces par thème
+
 
 	/*créer une page connexion */
 	['GET', '/connexion', 'Default#connexion', 'default_connexion'],

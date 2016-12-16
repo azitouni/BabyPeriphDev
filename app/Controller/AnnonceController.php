@@ -20,7 +20,7 @@ class AnnonceController extends Controller {
   }
 
   /**
-  * Page inscription
+  * Ajout de l'annonce en base de données
   */
 
   public function traitementAnnonce(){
@@ -52,7 +52,6 @@ class AnnonceController extends Controller {
         $isVente =false;
         $isService = true;
         break;
-
         default:
         $isLocation =false;
         $isVente =false;
@@ -72,7 +71,6 @@ class AnnonceController extends Controller {
       'idUtilisateur' => $user['id']
     ]);
 
-    //$auth->logUserIn($userData);
 
     if (isset($imagePrincipale) && strlen($imagePrincipale)>0) {
       $imagePrincipale = $annonceData['id'] .'_' .$imagePrincipale;
@@ -87,8 +85,43 @@ class AnnonceController extends Controller {
       }
     }
 
-  //	$this->redirectToRoute('default_home');
+  	$this->redirectToRoute('default_home');
   }
 
+  //afficher la liste des annonces par thème
+  public function allAnnonce($theme){
+
+    $annonce = new annonce();
+    $allAnnonce = $annonce->findAllAnnonceByTheme($theme);
+    // echo '<pre>';
+    // print_r($allAnnonce);
+    // echo '</pre>';
+    $this->show('annonce/allAnnonce',['allAnnonce' => $allAnnonce]);
+  }
+  // afficher mes annonces
+  public function myAnnonce(){
+    $loggedUser = $this->getUser();
+    $this->show('annonce/myAnnonce',['user' => $loggedUser]);
+  }
+
+  // public function findAllAnnonceByTheme($theme)
+	// {
+  //   switch ($theme) {
+  //     case 'vente':
+  //       $sql = 'SELECT * FROM annonce WHERE isVente = 1';
+  //       break;
+  //     case 'service':
+  //         $sql = 'SELECT * FROM annonce WHERE isService = 1';
+  //         break;
+  //     default:
+  //       $sql = 'SELECT * FROM annonce WHERE isLocation = 1';
+  //       break;
+  //   }
+  //
+	// 	$sth = $this->dbh->prepare($sql);
+	// 	$sth->execute();
+  //
+	// 	return $sth->fetch();
+	// }
 
 }
