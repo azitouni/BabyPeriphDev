@@ -1,26 +1,211 @@
-html, body {
-	font-family: Consolas, monaco, monospace;
-	background-color: #272822;
-	color: #F8F8F2;
+
+
+body{
+	background-color: #fefdf0;
 }
 
-.container {
-	margin: 50px;
+
+
+header{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9e4f7+0,0fb4e7+100;Ble+3D+%235 */
+background: #a9e4f7; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #a9e4f7 0%, #0fb4e7 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #a9e4f7 0%,#0fb4e7 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #a9e4f7 0%,#0fb4e7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	
+	color: white;
 }
 
-a {
-	text-decoration: none;
-	color: #A6E22E;
+
+
+footer{
+	background-color: #F52F57;
+
+	
 }
 
-a:hover {
-	color: #F92672;
+
+ul{
+	list-style-type: none;
+
 }
 
-h1 {
-	color: #F92672;
+
+
+
+.logo{
+	background-image: url(../img/logo-3.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	
+	height: 120px;
+
 }
 
-h2 {
-	color: #66D9EF;
+
+
+li{
+	
+	color: white;
+
+}
+
+a{
+	color: white;
+}
+
+
+.nav-item{
+	
+	color: white;
+	display: inline-block;
+}
+
+
+.bouton1{
+	margin-top: 15px;
+}
+
+
+.bouton2{
+	margin-top: 10px;
+}
+
+
+
+.menu{
+	background-color: #F52F57;
+
+
+	
+	
+}
+
+
+.banniere{
+
+
+}
+
+
+.navbar-default .navbar-nav>li>a{
+	color: white;
+}
+
+
+
+.item{
+	margin-right: 0;
+	color: white;
+	display: inline-block;
+}
+
+.item2{
+	display: inline-block;
+}
+
+.navbar-default{
+	border: none;
+
+
+}
+
+.navbar-default .navbar-brand{
+	color: white;
+}
+
+@media screen and (min-width: 768px){
+	.main-menu {
+		text-align: center;
+	}
+	.main-menu li{
+		width: 25%;
+	}
+}
+@media screen and (min-width: 992px){
+	.logo{
+		background-image: url(../img/logo-2.png);
+	}
+
+	.item{
+		margin-right: 500px;
+	}
+
+	.img-taille{
+		width: 180px;
+	}
+
+	footer{
+		
+	}
+	
+
+	
+}
+
+
+
+.contenu{
+	height: 1000px;
+	background-color: #fefdf0;
+
+}
+
+
+main{
+	margin-top: -50px;
+}
+
+
+.footer-nav{
+	
+}
+
+
+.footer-nav a{
+	color: white;
+}
+
+
+.img-taille{
+	width: 50px;
+
+
+}
+
+
+.img-taille1{
+	margin-left: 160px;
+}
+
+
+.align-center{
+	margin-top: 20px;
+	margin-left: 215px;
+}
+
+
+.bouton3{
+	margin-left: px;
+}
+
+.news{
+	text-align: center;
+}
+
+
+.bouton-news{
+	margin-top: 30px;
+}
+
+.main-menu {
+	width:80%;
+	margin-left: 2%;
+}
+
+
+.main-menu li a{
+	padding: 15px 0;
 }
