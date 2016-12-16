@@ -8,33 +8,29 @@
 	<link href="img/baby.png" rel="icon">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/font-awesome/css/font-awesome.min.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">	
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
-<body>	
+<body>
 	<header class="container-fluid">
-    	<h1>W :: <?= $this->e($title) ?></h1>
-			<?php
-				if (!isset($_SESSION['user'])) {
-					echo '<li><a href="' .$this->url('default_inscription') .'" class="menu">
-											<span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-								<li><a href="' .$this->url('default_connexion') .'"  class="menu">
-																	<span class="fa fa-plug"></span> Connexion</a></li>';
-				}
-				else{
-					echo '<p class="navbar-text menu">' .$_SESSION['user']['userName'] .'</p>
-											<li><a href="' .$this->url('default_deconnexion') .'"  class="menu">
-											<span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>';
-						}
-				 echo '
-				 <li><a href="'.$this->url('Annonce_allAnnonce', ["theme" => "location"]) .'">Location</a></li>
-				 <li><a href="' .$this->url('Annonce_allAnnonce', ["theme" => "vente"]) .'">Vente</a></li>
-				 <li><a href="' .$this->url('Annonce_allAnnonce', ["theme" => "service"]) .'">Services</a></li>';
-				 ?>
+		<h1>W :: <?= $this->e($title) ?></h1>
 		<div class="row banniere">
 			<div class="col-xs-offset-4 col-xs-8 col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9  ">
 				<ul class="bouton1 ">
-					<li class="item2"><a href="">Connexion </a></li>
-					<li class="item2"><a href="">Inscription</a></li>
+					<!-- <li class="item2"><a href="">Connexions </a></li>
+					<li class="item2"><a href="">Inscriptions</a></li> -->
+					<?php
+					if (!isset($_SESSION['user'])) {
+						echo '<li><a href="' .$this->url('default_inscription') .'" class="menu">
+						<span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+						<li><a href="' .$this->url('default_connexion') .'"  class="menu">
+						<span class="fa fa-plug"></span> Connexion</a></li>';
+					}
+					else{
+						echo '<p class="navbar-text menu">' .$_SESSION['user']['userName'] .'</p>
+						<li><a href="' .$this->url('default_deconnexion') .'"  class="menu">
+						<span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>';
+					}
+					?>
 				</ul>
 			</div>
 		</div>
@@ -52,18 +48,17 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">Acceuil</a>
+						<a class="navbar-brand" href="<?php echo $this->url('default_home'); ?>">Acceuil</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 						<ul class="nav navbar-nav main-menu">
-							<li class="nav-item"><a href="#">Location</a></li>
-							<li class="nav-item"><a href="#">Vente</a></li>
-							<li class="nav-item"><a href="#">Services</a></li>
-							<li class="nav-item"><a href="#">Déposer une annonce</a></li>
-		
+							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>">Location</a></li>
+							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>">Vente</a></li>
+							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>">Services</a></li>
+							<li class="nav-item"><a href="<?php echo $this->url('Annonce_index'); ?>">Déposer une annonce</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->
@@ -71,6 +66,10 @@
 		</div>
 	</header>
 
+
+	<section class="container">
+		<?= $this->section('main_content') ?>
+	</section>
 	<main>
 		<div class="container-fluid">
 			<div class="row">
@@ -78,10 +77,7 @@
 				</div>
 			</div>
 		</div>
-		
 	</main>
-
-
 	<footer>
 		<div class="container-fluid">
 			<div class="row">
@@ -104,7 +100,6 @@
 						<li><a href="">Contact</a></li>
 						<li><a href="">FAQ</a></li>
 						<li><a href="">Plan du site</a></li>
-
 					</ul>
 				</div>
 				<div class="col-xs-12 col-md-3 footer-nav text-center">
@@ -122,23 +117,22 @@
 					<br>
 					<ul class="list-inline">
 						<li>
-							<a href="https://www.facebook.com/gino.robertot" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="img/facebook.png" alt=""></a>
+							<a href="https://www.facebook.com/gino.robertot" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="<?= $this->assetUrl('img/facebook.png') ?>" alt=""></a>
 						</li>
 						<li>
-							<a href="#"><img class="img-taille" src="img/google plus.png" alt=""></a>
+							<a href="#"><img class="img-taille" src="<?= $this->assetUrl('img/google plus.png') ?>" alt=""></a>
 						</li>
 						<li>
-							<a href="#"><img class="img-taille" src="img/linkdin.png" alt="" target="_blank"></a>
+							<a href="#"><img class="img-taille" src="<?= $this->assetUrl('img/linkdin.png') ?>" alt="" target="_blank"></a>
 						</li>
 					</ul>
-				</div> 
-			</div>                   
+				</div>
+			</div>
 		</div>
+	</footer>
 
-</footer>
-
-<script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>
-<script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>
+	<script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
 
 </body>
 </html>
