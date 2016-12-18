@@ -112,7 +112,7 @@ public function traitementConnexion()
 	$plainPassword = $_POST['password'];
 
 	$userId = $auth->IsValidLoginInfo($usernameOrEmail,$plainPassword);
-
+	//var_dump($userId);
 	if ($userId !==0) {
 		$userModel = new UsersModel();
 		$user = $userModel->find($userId);
@@ -123,12 +123,12 @@ public function traitementConnexion()
 		// 	$this->redirectToRoute('admin_index');
 		// }
 		// else {
-		// 	$this->redirectToRoute('default_home');
+		$this->redirectToRoute('default_home');
 		// }
 
 	}
 	else {
-		$this->redirectToRoute('default_home');
+		//$this->redirectToRoute('default_home');
 	}
 }
 

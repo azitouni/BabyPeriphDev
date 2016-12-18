@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo $titrePage; ?></title>
+	<title><?php echo $title; ?></title>
 	<link href="img/baby.png" rel="icon">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/font-awesome/css/font-awesome.min.css') ?>">
@@ -58,7 +58,28 @@
 							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>">Location</a></li>
 							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>">Vente</a></li>
 							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>">Services</a></li>
-							<li class="nav-item"><a href="<?php echo $this->url('Annonce_index'); ?>">Déposer une annonce</a></li>
+							<li class="nav-item"><a href="<?php
+							if (!isset($_SESSION['user'])) {
+								echo '' .$this->url('default_connexion') .'';
+							}
+							else{
+								echo '' .$this->url('Annonce_index') .'';
+							}
+							?>">Déposer une annonce</a></li>
+							<?php if (isset($_SESSION['user'])) {
+								echo '<li class="nav-item"><a href="' .$this->url('Annonce_myAnnonce') .'">Mes annonces</a></li>';
+							}
+							?>
+							<li class="nav-item inline">
+								<div class="row">
+									<div class="col-md-9">
+										<input type="text" class="form-control" placeholder="" id="searchAnnonce" name="searchAnnonce">
+									</div>
+									<div class="col-md-3">
+										<button type="submit" class="btn btn-default" id="btnSearch"><span class="glyphicon glyphicon-search"></span> Rechercher</button>
+									</div>
+								</div>
+							</li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->

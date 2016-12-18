@@ -34,7 +34,14 @@
             <label for="fichier">Image principale : </label>
             <input type="file" class="picture" accept="image/bmp,image/gif,image/jpeg,image/png,image/x-ms-bmp" name="fichier" id="fichier">
           </div>
-
+          <div class="form-group">
+            <label for="adresse">Adresse : </label>
+            <input type="text" class="form-control" id="adresse" name='address' required>
+          </div>
+          <div class="form-group">
+            <label for="ville">Ville : </label>
+            <input type="text" class="form-control" id="ville" name='city' required>
+          </div>
 
           <button type="submit" id="valider" class="btn btn-success">Valider</button>
         </form>

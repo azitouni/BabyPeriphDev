@@ -30,6 +30,16 @@
             <label for="adresse">Adresse : </label>
             <input type="text" class="form-control" id="adresse" name='address' required>
           </div>
+          <div class="location">
+            <div>
+              <map>
+                <iframe class="location-center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21066.807664393473!2d1.8248370470001813!3d48.69877257340729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e427675a0a9031%3A0x40b82c3688c39d0!2s78610+Le+Perray-en-Yvelines!5e0!3m2!1sfr!2sfr!4v1474470538202" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </map>
+            </div>
+            <div>
+              <p class="location-center"> Adresse : 05 rue de l'église, 78350, Le Perray en Yvelines</p>
+            </div>
+          </div>
           <div class="form-group">
             <label for="cp">Code postal : </label>
             <input type="text" class="form-control" id="cp" name='postalCode' required>

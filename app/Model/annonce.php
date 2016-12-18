@@ -106,6 +106,20 @@ class annonce extends \W\Model\Model {
 		return $sth->fetchAll();
 	}
 
+  public function findMyAnnonce($loggedUser)
+	{
+
+    if (!isset($loggedUser)) {
+      return false;
+    }
+
+    $sql = 'SELECT a.*, u.city FROM annonce a join utilisateur u on a.idUtilisateur = u.id WHERE idUtilisateur = ' .$loggedUser['id'];
+
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute();
+
+		return $sth->fetchAll();
+	}
 }
 
 

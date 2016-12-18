@@ -33,6 +33,8 @@ class AnnonceController extends Controller {
       $desc = htmlentities(strip_tags($_POST['desc']));
       $prix = htmlentities(strip_tags($_POST['prix']));
       $duree = htmlentities(strip_tags($_POST['duree']));
+      $adress = htmlentities(strip_tags($_POST['address']));
+      $city = htmlentities(strip_tags($_POST['city']));
       $imagePrincipale = htmlentities(strip_tags($_FILES['fichier']['name']));
       $selectTypeAnnonce = $_POST['select_type_annonce'];
 
@@ -68,6 +70,8 @@ class AnnonceController extends Controller {
       'isLocation' => $isLocation,
       'isVente' => $isVente,
       'isService' => $isService,
+      'address' => $address,
+      'city' => $city,
       'idUtilisateur' => $user['id']
     ]);
 
@@ -101,27 +105,13 @@ class AnnonceController extends Controller {
   // afficher mes annonces
   public function myAnnonce(){
     $loggedUser = $this->getUser();
-    $this->show('annonce/myAnnonce',['user' => $loggedUser]);
+    $annonce = new annonce();
+    $myAnnonce = $annonce->findMyAnnonce($loggedUser);
+    // echo '<pre>';
+    // print_r($myAnnonce);
+    // echo '</pre>';
+    $this->show('annonce/myAnnonce',['myAnnonce' => $myAnnonce]);
   }
 
-  // public function findAllAnnonceByTheme($theme)
-	// {
-  //   switch ($theme) {
-  //     case 'vente':
-  //       $sql = 'SELECT * FROM annonce WHERE isVente = 1';
-  //       break;
-  //     case 'service':
-  //         $sql = 'SELECT * FROM annonce WHERE isService = 1';
-  //         break;
-  //     default:
-  //       $sql = 'SELECT * FROM annonce WHERE isLocation = 1';
-  //       break;
-  //   }
-  //
-	// 	$sth = $this->dbh->prepare($sql);
-	// 	$sth->execute();
-  //
-	// 	return $sth->fetch();
-	// }
 
 }
