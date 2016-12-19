@@ -75,11 +75,9 @@ class AnnonceController extends Controller {
       'idUtilisateur' => $user['id']
     ]);
 
-
     if (isset($imagePrincipale) && strlen($imagePrincipale)>0) {
       $imagePrincipale = $annonceData['id'] .'_' .$imagePrincipale;
       $update = $annonce->Update(['imagePrincipale' => $imagePrincipale],$annonceData['id']);
-
       $file_name = $_FILES['fichier']['name'];
       $destination_folder = '../public/assets/img/annonce/' .$annonceData['id'] .'_'  .$file_name;
       $tmp = $_FILES['fichier']['tmp_name'];
@@ -94,7 +92,6 @@ class AnnonceController extends Controller {
 
   //afficher la liste des annonces par thème
   public function allAnnonce($theme){
-
     $annonce = new annonce();
     $allAnnonce = $annonce->findAllAnnonceByTheme($theme);
     // echo '<pre>';
@@ -127,6 +124,25 @@ class AnnonceController extends Controller {
   }
 
   public function updateDelete($id){
-    
+    //var_dump($id);
+    $annonce = new annonce();
+    $detailAnnonce = $annonce->getAnnonceById($id);
+    if (isset($_POST['deleteBtn'])) {
+      //var_dump($_POST);
+      //supprimer fichier s'il existe
+      if (isset($detailAnnonce['imagePrincipale'])) {
+        $filePath = '../public/assets/img/annonce/' .$detailAnnonce['id'] .'_'  .$detailAnnonce['imagePrincipale'];
+        unlink('$filePath');
+      }
+
+      //supprimer item in DB
+      $update = $annonce->Delete($detailAnnonce['id']);
+
+      $this->redirectToRoute('default_home');
+
+    }
+    elseif (isset($_POST['updateBtn'])) {
+      //var_dump($_POST);
+    }
   }
 }

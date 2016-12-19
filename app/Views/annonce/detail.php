@@ -20,8 +20,8 @@
     <p> Prix : <strong>'.$detailAnnonce['prix'] .' (€)</strong> </p>
     <p> Date création : '.$detailAnnonce['dateCreation'] .'</p>';
 
-    if ($detailAnnonce['idUtilisateur']==$_SESSION['user']['id']) {
-      echo '<form class="" action="' .<?= $this->url('annonce_updateDeleteAnnonce')  ?> .'" method="post">
+    if (isset($_SESSION['user']) && $_SESSION['user']['id']==$detailAnnonce['idUtilisateur']) {
+      echo '<form class="" action="' .$this->url('annonce_updateDelete',['id' => $detailAnnonce['id'] ]) .'" method="post">
         <div class="row">
           <div class="col-md-6 text-center">
             <button type="submit" name="updateBtn" class="btn btn-warning"> Modifier </button>
