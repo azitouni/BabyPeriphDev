@@ -30,6 +30,7 @@ class annonce extends \W\Model\Model {
 
   public function getAnnonce($id){
     $annonce = $this->find($id);
+    var_dump($annonce);
     $this->id = $annonce['id'];
     $this->annonceName= $annonce['annonceName'];
     $this->annonceDescription = $annonce['annonceDescription'];
@@ -40,10 +41,18 @@ class annonce extends \W\Model\Model {
     $this->dateCreation = $annonce['dateCreation'];
     $this->dateModification = $annonce['dateModification'];
     $this->imagePrincipale = $annonce['imagePrincipale'];
-    $this->imageFree = $annonce['imageFree'];
+    $this->imageFree = $annonce['imagefree'];
     $this->image1 = $annonce['image1'];
     $this->image2 = $annonce['image2'];
     $this->image3 = $annonce['image3'];
+    return $this;
+  }
+  public function getAnnonceById($id){
+    //var_dump($id);
+    //var_dump($this);
+    $annonce = $this->find($id);
+    //var_dump($annonce);
+    return $annonce;
   }
 
   public function getAnnonceByUserId($user_id){
@@ -90,13 +99,13 @@ class annonce extends \W\Model\Model {
 	{
     switch ($theme) {
       case 'vente':
-        $sql = 'SELECT a.*, u.city FROM annonce a join utilisateur u on a.idUtilisateur = u.id WHERE isVente = 1';
+        $sql = 'SELECT  * FROM annonce WHERE  isVente = 1';
         break;
       case 'service':
-          $sql = 'SELECT a.*, u.city FROM annonce a join utilisateur u on a.idUtilisateur = u.id WHERE isService = 1';
+          $sql = 'SELECT  * FROM annonce WHERE  isService = 1';
           break;
       default:
-        $sql = 'SELECT a.*, u.city FROM annonce a join utilisateur u on a.idUtilisateur = u.id WHERE isLocation = 1';
+        $sql = 'SELECT  * FROM annonce WHERE  isLocation = 1';
         break;
     }
 
@@ -113,7 +122,7 @@ class annonce extends \W\Model\Model {
       return false;
     }
 
-    $sql = 'SELECT a.*, u.city FROM annonce a join utilisateur u on a.idUtilisateur = u.id WHERE idUtilisateur = ' .$loggedUser['id'];
+    $sql = 'SELECT  * FROM annonce WHERE idUtilisateur = ' .$loggedUser['id'];
 
 		$sth = $this->dbh->prepare($sql);
 		$sth->execute();

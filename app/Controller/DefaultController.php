@@ -108,8 +108,8 @@ public function connexion()
 public function traitementConnexion()
 {
 	$auth = new Auth();
-	$usernameOrEmail = $_POST['identifiant'];
-	$plainPassword = $_POST['password'];
+	$usernameOrEmail = htmlentities(strip_tags($_POST['identifiant']));
+	$plainPassword = htmlentities(strip_tags($_POST['password']));
 
 	$userId = $auth->IsValidLoginInfo($usernameOrEmail,$plainPassword);
 	//var_dump($userId);
@@ -128,7 +128,7 @@ public function traitementConnexion()
 
 	}
 	else {
-		//$this->redirectToRoute('default_home');
+		$this->redirectToRoute('default_home');
 	}
 }
 

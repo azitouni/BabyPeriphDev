@@ -33,11 +33,11 @@ class AnnonceController extends Controller {
       $desc = htmlentities(strip_tags($_POST['desc']));
       $prix = htmlentities(strip_tags($_POST['prix']));
       $duree = htmlentities(strip_tags($_POST['duree']));
-      $adress = htmlentities(strip_tags($_POST['address']));
+      $address = htmlentities(strip_tags($_POST['address']));
       $city = htmlentities(strip_tags($_POST['city']));
       $imagePrincipale = htmlentities(strip_tags($_FILES['fichier']['name']));
       $selectTypeAnnonce = $_POST['select_type_annonce'];
-
+      //var_dump($address)
       switch ($selectTypeAnnonce) {
         case 1:
         $isLocation =true;
@@ -70,8 +70,8 @@ class AnnonceController extends Controller {
       'isLocation' => $isLocation,
       'isVente' => $isVente,
       'isService' => $isService,
-      'address' => $address,
-      'city' => $city,
+      'annonceAddress' => $address,
+      'annonceCity' => $city,
       'idUtilisateur' => $user['id']
     ]);
 
@@ -113,5 +113,20 @@ class AnnonceController extends Controller {
     $this->show('annonce/myAnnonce',['myAnnonce' => $myAnnonce]);
   }
 
+  // afficher mes annonces
+  public function detail($id){
+    $loggedUser = $this->getUser();
+    $annonce = new annonce();
+    //$detailAnnonce = $annonce->getAnnonce($id);
+    $detailAnnonce = $annonce->getAnnonceById($id);
+    // echo '<pre>';
+    // print_r($detailAnnonce);
+    // echo '</pre>';
+    // var_dump($detailAnnonce);
+    $this->show('annonce/detail',['detailAnnonce' => $detailAnnonce]);
+  }
 
+  public function updateDelete($id){
+    
+  }
 }
