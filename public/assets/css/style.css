@@ -6,7 +6,7 @@ body{
 
 
 header{
-	
+
 }
 
 
@@ -14,7 +14,7 @@ header{
 footer{
 	background-color: #F52F57;
 
-	
+
 }
 
 
@@ -30,7 +30,7 @@ ul{
 	background-image: url(../img/logo-3.png);
 	background-size: contain;
 	background-repeat: no-repeat;
-	
+
 	height: 120px;
 
 }
@@ -43,8 +43,13 @@ a{
 	color: white;
 }
 
+a.annonce{
+	color: darkblue;
+	font-weight: bold;
+}
 
-.nav-item{	
+
+.nav-item{
 	color: white;
 	display: inline-block;
 }
@@ -63,8 +68,8 @@ a{
 
 
 
-	
-	
+
+
 }
 
 
@@ -99,7 +104,8 @@ h2 {
 }
 .img-annonce{
 	height: 200px;
-	padding-left: 50px;
+	display:block;
+	margin:0 auto;
 }
 
 .navbar-default{
@@ -119,29 +125,31 @@ h2 {
 		/*text-align: center;*/
 	}
 	.main-menu li{
-		margin-right: 140px;
+		margin-right: 110px;
 		/*padding-top: 20px;*/
+
 	}
 }
 @media screen and (min-width: 992px){
 	.logo{
 		background-image: url(../img/logo-2.png);
 	}
-
+.small{
+	width:350%;
+}
 
 	.img-taille{
 		width: 180px;
 	}
 
-	footer{
-		
-	}
- .accueil{
- 	margin-left: 500px;
- }
-	
 
-	
+.categorie-item{
+	border-right: 1px solid black;
+
+}
+
+
+
 }
 
 .main-menu{
@@ -149,7 +157,7 @@ h2 {
 }
 
 .contenu{
-	height: 1000px;
+	height: 190px;
 	background-color: #fefdf0;
 
 }
@@ -161,7 +169,7 @@ main{
 
 
 .footer-nav{
-	
+
 }
 
 
@@ -219,10 +227,6 @@ main{
 }
 
 
-.gogo{
-	
-}
-
 
 .gogo2{
 	margin-top: 8px;
@@ -232,3 +236,69 @@ main{
 li{
 list-style-type: none;
 } 
+=======
+textarea{
+	background-color: white;
+}
+
+
+
+.plan a{
+	color: black;
+	
+
+}
+.plan li::before {
+    content: "\21D2";
+    position: relative;
+    left: -10px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    color: black;
+
+
+}
+
+
+.plan li{
+	margin-top: 20px;
+}
+
+.categorie-item{
+	
+
+}
+
+.essai {
+	margin-top: 30px;
+
+}
+
+hr{
+    height: 0;
+    margin: 40px 0 5px;
+    padding: 0;
+    border: 1px solid red;
+    font-family: arial;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1;
+    color: red;
+}
+
+.small{
+	width:100%;
+}
+
+.carousel{
+    margin-top: 75px;
+}
+.titre{
+	margin-bottom: 75px;
+}
+
+.description{
+	
+	height: 100px;
+}
