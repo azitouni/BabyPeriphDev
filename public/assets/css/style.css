@@ -6,15 +6,7 @@ body{
 
 
 header{
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9e4f7+0,0fb4e7+100;Ble+3D+%235 */
-background: #a9e4f7; /* Old browsers */
-background: -moz-linear-gradient(45deg,  #a9e4f7 0%, #0fb4e7 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg,  #a9e4f7 0%,#0fb4e7 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg,  #a9e4f7 0%,#0fb4e7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
 	
-	color: white;
 }
 
 
@@ -63,14 +55,12 @@ a{
 }
 
 
-.bouton2{
-	margin-top: 10px;
-}
-
 
 
 .menu{
 	background-color: #F52F57;
+	 
+
 
 
 	
@@ -79,7 +69,10 @@ a{
 
 
 .banniere{
+	background-color:#00BFFF;
 
+	
+	color: white;
 
 }
 
@@ -90,7 +83,7 @@ a{
 
 
 
-.item{
+.item1{
 	margin-right: 0;
 	color: white;
 	display: inline-block;
@@ -118,13 +111,16 @@ h2 {
 .navbar-default .navbar-brand{
 	color: white;
 }
-
+.accueil{
+ 	margin-left: 0;
+ }
 @media screen and (min-width: 768px){
 	.main-menu {
-		text-align: center;
+		/*text-align: center;*/
 	}
 	.main-menu li{
-		width: 25%;
+		margin-right: 140px;
+		/*padding-top: 20px;*/
 	}
 }
 @media screen and (min-width: 992px){
@@ -132,9 +128,6 @@ h2 {
 		background-image: url(../img/logo-2.png);
 	}
 
-	.item{
-		margin-right: 500px;
-	}
 
 	.img-taille{
 		width: 180px;
@@ -143,12 +136,17 @@ h2 {
 	footer{
 		
 	}
+ .accueil{
+ 	margin-left: 500px;
+ }
 	
 
 	
 }
 
-
+.main-menu{
+	float: right;
+}
 
 .contenu{
 	height: 1000px;
@@ -190,10 +188,6 @@ main{
 }
 
 
-.bouton3{
-	margin-left: px;
-}
-
 .news{
 	text-align: center;
 }
@@ -204,8 +198,7 @@ main{
 }
 
 .main-menu {
-	width:80%;
-	margin-left: 2%;
+	
 }
 
 
@@ -213,3 +206,29 @@ main{
 	padding: 15px 0;
 }
 
+
+
+.carousel-inner{
+	width: 100%;
+}
+
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img{
+
+	width: 100%;
+}
+
+
+.gogo{
+	
+}
+
+
+.gogo2{
+	margin-top: 8px;
+	margin-left: 50px;
+
+}
+li{
+list-style-type: none;
+} 

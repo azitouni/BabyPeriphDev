@@ -12,12 +12,11 @@
 </head>
 <body>
 	<header class="container-fluid">
-		<h1>W :: <?= $this->e($title) ?></h1>
+		
 		<div class="row banniere">
 			<div class="col-xs-offset-4 col-xs-8 col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9  ">
-				<ul class="bouton1 ">
-					<!-- <li class="item2"><a href="">Connexions </a></li>
-					<li class="item2"><a href="">Inscriptions</a></li> -->
+				<ul>
+					
 					<?php
 					if (!isset($_SESSION['user'])) {
 						echo '<li><a href="' .$this->url('default_inscription') .'" class="menu">
@@ -38,8 +37,8 @@
 			<div class="col-xs-offset-1 col-xs-10  col-md-8 col-md-offset-2 logo"></div>
 		</div>
 		<div class="row ">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid menu">
+			<nav class="navbar navbar-default menu">
+				
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -48,17 +47,24 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="<?php echo $this->url('default_home'); ?>">Acceuil</a>
+						<div class="">
+							<a class="navbar-brand " href="<?php echo $this->url('default_home'); ?>">Accueil</a>
+						</div>
+						
+
+						
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-						<ul class="nav navbar-nav main-menu">
-							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>">Location</a></li>
-							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>">Vente</a></li>
-							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>">Services</a></li>
-							<li class="nav-item"><a href="<?php
+						<ul class="nav navbar-nav main-menu col-md-8">
+							
+							
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>">Location</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>">Vente</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>">Services</a></li>
+							<li class="nav-item gogo"><a href="<?php
 							if (!isset($_SESSION['user'])) {
 								echo '' .$this->url('default_connexion') .'';
 							}
@@ -70,21 +76,22 @@
 								echo '<li class="nav-item"><a href="' .$this->url('Annonce_myAnnonce') .'">Mes annonces</a></li>';
 							}
 							?>
-							<li class="nav-item inline">
-								<div class="row">
-									<div class="col-md-9">
-										<input type="text" class="form-control" placeholder="" id="searchAnnonce" name="searchAnnonce">
-									</div>
-									<div class="col-md-3">
-										<button type="submit" class="btn btn-default" id="btnSearch"><span class="glyphicon glyphicon-search"></span> Rechercher</button>
-									</div>
-								</div>
-							</li>
+							
+							<form class="navbar-form navbar-right">
+						        <div class="form-group">
+						          <input type="text" class="form-control" placeholder="Search">
+						        </div>
+						        <button type="submit" class="btn btn-default">Submit</button>
+						      </form>	
 						</ul>
 					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
+				<!-- /.container-fluid -->
 			</nav>
 		</div>
+		
+		
+		
+		
 	</header>
 
 
@@ -102,18 +109,18 @@
 	<footer>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-2 col-md-offset-2 col-sm-6 footer-nav">
+				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-3 col-md-offset-2 col-sm-6 footer-nav">
 					<h3 class="">Informations</h3>
-					<ul>
+					
 						<li><a href="">Paiement sécurisé</a></li>
 						<li><a href="">Programme fidélité</a></li>
 						<li><a href="">Nos partenaires</a></li>
 						<li><a href="">Questions fréquentes</a></li>
-					</ul>
+					
 				</div>
 				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
 					<h3 class="">A propos</h3>
-					<ul>
+					
 						<li><a href="">Qui sommes nous ?</a></li>
 						<li><a href="">Avis clients</a></li>
 						<li><a href="">Mentions légales</a></li>
@@ -121,21 +128,22 @@
 						<li><a href="">Contact</a></li>
 						<li><a href="">FAQ</a></li>
 						<li><a href="">Plan du site</a></li>
-					</ul>
+					
 				</div>
 				<div class="col-xs-12 col-md-3 footer-nav text-center">
-					<h3 class="news">Newsletter</h3>
-					<p class="news">Inscrivez-vous et recevez des offres exclusives !</p>
-					<form class="">
+					<h3 class="news">Nous contacter</h3>
+					
+					<form class="form-group">
 						<div class="input-group">
-							<span class="input-group-addon" id="basic-addon1">@</span>
-							<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-						</div>
-						<div class="">
+  							<span class="input-group-addon" id="basic-addon1">@</span>
+  							<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+						</div> <br>
+						<textarea cols="40" rows="5" class="form-control"></textarea>
+						<div class="form-group">
 							<input class="btn btn-default bouton-news" type="submit" name="">
 						</div>
 					</form>
-					<br>
+					
 					<ul class="list-inline">
 						<li>
 							<a href="https://www.facebook.com/gino.robertot" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="<?= $this->assetUrl('img/facebook.png') ?>" alt=""></a>
@@ -149,7 +157,13 @@
 					</ul>
 				</div>
 			</div>
+			<div class="row copy">
+			<div class=" text-center ">
+
+				<p>&copy; 2016 MA<img class ="img-taille" src="<?= $this->assetUrl('img/Mags_team.png') ?>"> GS Team  </p>
+			 </div>
 		</div>
+
 	</footer>
 
 	<script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>
