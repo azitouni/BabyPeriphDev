@@ -143,4 +143,19 @@ public function deconnexion()
 
 }
 
+
+public function sitemap()
+{
+	$this->show('default/sitemap');
 }
+
+
+public function lost()
+{
+	$this->show('default/lostPassword');
+	
+}
+
+}
+
+

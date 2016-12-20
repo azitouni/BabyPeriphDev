@@ -63,9 +63,9 @@
 						<ul class="nav navbar-nav main-menu col-md-8">
 							
 							
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>">Location</a></li>
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>">Vente</a></li>
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>">Services</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>"><i class="fa fa-clock-o" aria-hidden="true"></i>Location</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>"><i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i>Vente</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>"><i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i>Services</a></li>
 							<li class="nav-item gogo"><a href="<?php
 							if (!isset($_SESSION['user'])) {
 								echo '' .$this->url('default_connexion') .'';
@@ -73,7 +73,7 @@
 							else{
 								echo '' .$this->url('Annonce_index') .'';
 							}
-							?>">Déposer une annonce</a></li>
+							?>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>Déposer une annonce</a></li>
 							<?php if (isset($_SESSION['user'])) {
 								echo '<li class="nav-item"><a href="' .$this->url('Annonce_myAnnonce') .'">Mes annonces</a></li>';
 							}
@@ -111,7 +111,7 @@
 	<footer>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-3 col-md-offset-2 col-sm-6 footer-nav">
+				<div class="col-xs-5 col-xs-offset-1 col-sm-offset-0 col-md-3 col-md-offset-2 col-sm-6 footer-nav">
 					<h3 class="">Informations</h3>
 					
 						<li><a href="">Paiement sécurisé</a></li>
@@ -120,7 +120,7 @@
 						<li><a href="">Questions fréquentes</a></li>
 					
 				</div>
-				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
+				<div class="col-xs-5 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
 					<h3 class="">A propos</h3>
 					
 						<li><a href="">Qui sommes nous ?</a></li>
@@ -129,7 +129,7 @@
 						<li><a href="">Conditions générales</a></li>
 						<li><a href="">Contact</a></li>
 						<li><a href="">FAQ</a></li>
-						<li><a href="">Plan du site</a></li>
+						<li><a href="<?php echo $this->url('default_sitemap'); ?>">Plan du site</a></li>
 					
 				</div>
 				<div class="col-xs-12 col-md-3 footer-nav text-center">
