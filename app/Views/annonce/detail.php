@@ -4,7 +4,7 @@
 
 
 	<?php if ($detailAnnonce){ ?>
-    <div class="row">
+    <div class="row bottom">
     <?php  if (isset($detailAnnonce['imagePrincipale'])) {
       echo '<div class="col-md-6"><img class="img-responsive img-annonce" src="' .$this->assetUrl('img/annonce/') .$detailAnnonce['imagePrincipale'] .'" alt=""></div>';
       }
@@ -14,7 +14,7 @@
     echo '<div class="col-md-6">
     <h3>' .$detailAnnonce['annonceName'] .'</h3>
     <p> Description : </p>
-    <textarea  name="name" rows="8" cols="80" disabled>' .$detailAnnonce['annonceDescription'] .'</textarea>
+    <textarea class="form-control" name="name" rows="8" cols="60" disabled>' .$detailAnnonce['annonceDescription'] .'</textarea>
     <p> Adresse : ' .$detailAnnonce['annonceAddress'] .'</p>
     <p> Ville : ' .$detailAnnonce['annonceCity'] .'</p>
     <p> Prix : <strong>'.$detailAnnonce['prix'] .' (€)</strong> </p>
@@ -24,10 +24,10 @@
       echo '<form class="" action="' .$this->url('annonce_updateDelete',['id' => $detailAnnonce['id'] ]) .'" method="post">
         <div class="row">
           <div class="col-md-6 text-center">
-            <button type="submit" name="updateBtn" class="btn btn-warning"> Modifier </button>
+            <button type="submit" name="updateBtn" class="bouton-sinscrire btn-sm "> Modifier </button>
           </div>
           <div class="col-md-6 text-center">
-            <button type="submit" name="deleteBtn" class="btn btn-danger"> Supprimer </button>
+            <button type="submit" name="deleteBtn" class="btn-sm  bouton-supp"> Supprimer </button>
           </div>
         </div>
       </form>';

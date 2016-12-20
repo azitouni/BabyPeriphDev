@@ -1,29 +1,17 @@
-
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 body{
 	background-color: #fefdf0;
 }
 
 
-
 header{
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9e4f7+0,0fb4e7+100;Ble+3D+%235 */
-background: #a9e4f7; /* Old browsers */
-background: -moz-linear-gradient(45deg,  #a9e4f7 0%, #0fb4e7 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg,  #a9e4f7 0%,#0fb4e7 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg,  #a9e4f7 0%,#0fb4e7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-
-	color: white;
+	
 }
-
-
 
 footer{
-	background-color: #F52F57;
+	background-color: #FF6347;
 
-
-}
+ }
 
 
 ul{
@@ -38,8 +26,8 @@ ul{
 	background-image: url(../img/logo-3.png);
 	background-size: contain;
 	background-repeat: no-repeat;
-
-	height: 120px;
+	
+	height: 100px;
 
 }
 
@@ -51,20 +39,16 @@ a{
 	color: white;
 }
 
-a.annonce{
-	color: darkblue;
-	font-weight: bold;
-}
 
-
-.nav-item{
+.nav-item{	
 	color: white;
 	display: inline-block;
 }
 
 
 .bouton1{
-	margin-top: 15px;
+	margin-top: 50px;
+
 }
 
 
@@ -75,17 +59,20 @@ a.annonce{
 
 
 .menu{
-	background-color: #F52F57;
+	background-color: #F88E55;
 
 
-
-
+	
+	
 }
 
 
-.banniere{
+.banniere a{
 
-
+background-color: #FFEBCD;
+	
+	color: #FF6347;
+	
 }
 
 
@@ -96,25 +83,41 @@ a.annonce{
 
 
 .item{
-	margin-right: 0;
+	/*margin-right: 0;*/
 	color: white;
 	display: inline-block;
 }
 
 .item2{
 	display: inline-block;
+	padding-right: 20px;
+	color: #FF6347;
+	
 }
 
-
+h1{
+	margin-left: 50px;
+}
 h2 {
 	color: #66D9EF;
 }
+h3{
+	color: #C73516;
+	font-weight: bold;
+}
 .img-annonce{
 	height: 200px;
-	display:block;
-	margin:0 auto;
+	padding-left: 50px;
 }
-
+.img-avatar{
+	width: 50px;
+	height: 50px;
+	padding-left: 20px;
+}
+a.annonce {
+	color: #FF6347;
+	font-size: 25px;
+}
 .navbar-default{
 	border: none;
 
@@ -128,9 +131,10 @@ h2 {
 @media screen and (min-width: 768px){
 	.main-menu {
 		text-align: center;
+
 	}
 	.main-menu li{
-		width: 25%;
+		width: 20%;
 	}
 }
 @media screen and (min-width: 992px){
@@ -147,11 +151,11 @@ h2 {
 	}
 
 	footer{
-
+		
 	}
+	
 
-
-
+	
 }
 
 
@@ -168,9 +172,6 @@ main{
 }
 
 
-.footer-nav{
-
-}
 
 
 .footer-nav a{
@@ -210,8 +211,9 @@ main{
 }
 
 .main-menu {
-	width:80%;
-	margin-left: 2%;
+	width:40%;
+	margin-right: 25px;
+	margin-left: 200px;
 }
 
 
@@ -219,6 +221,63 @@ main{
 	padding: 15px 0;
 }
 
-textarea{
-	background-color: white;
+
+.inscriptionUser-ajoutAnnonce {
+
+		padding-top: 25px;
+		padding-bottom: 25px;
+		margin-bottom: 50px;
+		margin-top: 50px; 
+	    /*background-color: rgba(192,192,192,0.3);*/ 
+
+}
+.descript{
+	margin-top: 200px;
+
+
+    font-family: 'Open Sans', sans-serif;
+}
+ .sidebar {
+ 	margin-top: 9%;
+
+ 	padding: 20px;
+ 	border: 2px solid #FFDAB9;
+    border-radius: 5px;
+	
+	background: #FEA347; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#FEA347, #FFDAB9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FEA347, #FFDAB9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FEA347, #FFDAB9); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FEA347, #FFDAB9); /* Standard syntax */
+}
+
+
+.fond{
+	background-color: #FFDAB9;
+	margin-bottom: 25px;
+}
+.inscript-icone{
+	width: 150px;
+	height: 150px;
+	float: right;
+}
+.bouton-sinscrire{
+	color: #fff;
+	border-radius: 10px;
+	border: 1px medium #FFDAB9;
+	background-color: #DF6D14;
+    background: linear-gradient( #DF6D14, #EF9B0F);
+}	
+
+.bouton-supp{
+color: #fff;
+	border-radius: 10px;
+	border: 1px medium #F32F05;
+	background-color: #DF6D14;
+    background: linear-gradient( #DF6D14, #F32F05);
+
+}
+
+.bottom{
+	margin-bottom: 25px;
 }
