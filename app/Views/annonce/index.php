@@ -1,28 +1,35 @@
-<?php $this->layout('layout', ['title' => 'Ajout annonce']) ?>
+<?php $this->layout('layout', ['title' => 'Ajouter une annonce']) ?>
 
 <?php $this->start('main_content') ?>
-<section>
+
+<section class="fond">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
-        <form class="form-inline" enctype="multipart/form-data" action="<?= $this->url('annonce_traitementAnnonce')  ?>" method="post">
-          <div class="form-group">
-            <label for="nom">titre : </label>
+      
+      <div class="col-md-4 descript">
+      <p><strong>Seulement quelques secondes pour vous inscrire...</strong></p>
+      <p><strong>Promis, vous ne serez pas déçu !</strong></p>
+          
+    </div>
+     <div class="col-md-8  inscriptionUser-ajoutAnnonce ">
+        <form action="<?= $this->url('annonce_traitementAnnonce')  ?>" method="post">
+          <div class="col-md-8  form-group">
+            <label for="desc">titre : </label>
             <input type="text" class="form-control" id="nom" name="name" required>
           </div>
-          <div class="form-group">
+          <div class="col-md-8  form-group">
             <label for="desc">Description : </label>
             <textarea class="form-control" id="desc" name="desc" rows="8" cols="80" required></textarea>
           </div>
-          <div class="form-group">
+          <div class="col-md-8  form-group">
             <label for="prix">Prix (€) : </label>
             <input type="text" class="form-control" id="prix" name='prix' required>
           </div>
-          <div class="form-group">
+          <div class="col-md-8  form-group">
             <label for="duree">Durée (facultatif) : </label>
-            <input type="text" class="form-control" id="duree" name='duree'>
+            <input type="text" class="form-control" id="duree" name='duree' >
           </div>
-          <div class="form-group">
+          <div class="col-md-8  form-group">
             <select name="select_type_annonce">
               <option value="1">Location</option>
               <option value="2">Vente</option>
@@ -30,20 +37,21 @@
               <option value="4">Autres</option>
             </select>
           </div>
-          <div class="form-group">
+          <div class="col-md-8  form-group">
             <label for="fichier">Image principale : </label>
             <input type="file" class="picture" accept="image/bmp,image/gif,image/jpeg,image/png,image/x-ms-bmp" name="fichier" id="fichier">
           </div>
-          <div class="form-group">
+          <div class="col-md-8 form-group">
             <label for="adresse">Adresse : </label>
             <input type="text" class="form-control" id="adresse" name='address' required>
           </div>
-          <div class="form-group">
+          <div class="col-md-8 form-group">
             <label for="ville">Ville : </label>
             <input type="text" class="form-control" id="ville" name='city' required>
           </div>
-
-          <button type="submit" id="valider" class="btn btn-success">Valider</button>
+          <div class="col-md-8 ">
+          <button type="submit" id="valider" class="bouton-sinscrire btn-lg">Valider</button>
+          </div>
         </form>
       </div>
     </div>
