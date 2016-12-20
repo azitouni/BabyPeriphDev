@@ -6,11 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?php echo $title; ?></title>
 	<link href="img/baby.png" rel="icon">
+	<link rel="shortcut icon" type="image/png" href="<?= $this->assetUrl('img/baby-periph-icon.png') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('vendor/font-awesome/css/font-awesome.min.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
 <body>
+
 	<header class="container-fluid">
 		
 		<div class="row banniere">

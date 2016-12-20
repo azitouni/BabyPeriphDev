@@ -33,11 +33,11 @@ class AnnonceController extends Controller {
       $desc = htmlentities(strip_tags($_POST['desc']));
       $prix = htmlentities(strip_tags($_POST['prix']));
       $duree = htmlentities(strip_tags($_POST['duree']));
-      $adress = htmlentities(strip_tags($_POST['address']));
+      $address = htmlentities(strip_tags($_POST['address']));
       $city = htmlentities(strip_tags($_POST['city']));
       $imagePrincipale = htmlentities(strip_tags($_FILES['fichier']['name']));
       $selectTypeAnnonce = $_POST['select_type_annonce'];
-
+      //var_dump($address)
       switch ($selectTypeAnnonce) {
         case 1:
         $isLocation =true;
@@ -70,16 +70,14 @@ class AnnonceController extends Controller {
       'isLocation' => $isLocation,
       'isVente' => $isVente,
       'isService' => $isService,
-      'address' => $address,
-      'city' => $city,
+      'annonceAddress' => $address,
+      'annonceCity' => $city,
       'idUtilisateur' => $user['id']
     ]);
-
 
     if (isset($imagePrincipale) && strlen($imagePrincipale)>0) {
       $imagePrincipale = $annonceData['id'] .'_' .$imagePrincipale;
       $update = $annonce->Update(['imagePrincipale' => $imagePrincipale],$annonceData['id']);
-
       $file_name = $_FILES['fichier']['name'];
       $destination_folder = '../public/assets/img/annonce/' .$annonceData['id'] .'_'  .$file_name;
       $tmp = $_FILES['fichier']['tmp_name'];
@@ -94,7 +92,6 @@ class AnnonceController extends Controller {
 
   //afficher la liste des annonces par thème
   public function allAnnonce($theme){
-
     $annonce = new annonce();
     $allAnnonce = $annonce->findAllAnnonceByTheme($theme);
     // echo '<pre>';
@@ -113,5 +110,39 @@ class AnnonceController extends Controller {
     $this->show('annonce/myAnnonce',['myAnnonce' => $myAnnonce]);
   }
 
+  // afficher mes annonces
+  public function detail($id){
+    $loggedUser = $this->getUser();
+    $annonce = new annonce();
+    //$detailAnnonce = $annonce->getAnnonce($id);
+    $detailAnnonce = $annonce->getAnnonceById($id);
+    // echo '<pre>';
+    // print_r($detailAnnonce);
+    // echo '</pre>';
+    // var_dump($detailAnnonce);
+    $this->show('annonce/detail',['detailAnnonce' => $detailAnnonce]);
+  }
 
+  public function updateDelete($id){
+    //var_dump($id);
+    $annonce = new annonce();
+    $detailAnnonce = $annonce->getAnnonceById($id);
+    if (isset($_POST['deleteBtn'])) {
+      //var_dump($_POST);
+      //supprimer fichier s'il existe
+      if (isset($detailAnnonce['imagePrincipale'])) {
+        $filePath = '../public/assets/img/annonce/' .$detailAnnonce['id'] .'_'  .$detailAnnonce['imagePrincipale'];
+        unlink('$filePath');
+      }
+
+      //supprimer item in DB
+      $update = $annonce->Delete($detailAnnonce['id']);
+
+      $this->redirectToRoute('default_home');
+
+    }
+    elseif (isset($_POST['updateBtn'])) {
+      //var_dump($_POST);
+    }
+  }
 }

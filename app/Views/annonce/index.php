@@ -20,7 +20,7 @@
           </div>
           <div class="form-group">
             <label for="duree">Durée (facultatif) : </label>
-            <input type="text" class="form-control" id="duree" name='duree' required>
+            <input type="text" class="form-control" id="duree" name='duree'>
           </div>
           <div class="form-group">
             <select name="select_type_annonce">
