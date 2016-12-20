@@ -7,10 +7,10 @@
     <div class="col-md-4 descript">
       <p><strong>Seulement quelques secondes pour vous inscrire...</strong></p>
       <p><strong>Promis, vous ne serez pas déçu !</strong></p>
-          
+
     </div>
       <div class="col-md-8 inscriptionUser-ajoutAnnonce">
-        <form action="<?= $this->url('default_traitementInscription')  ?>" method="post">
+        <form  enctype="multipart/form-data" action="<?= $this->url('default_traitementInscription')  ?>" method="post">
           <div class=" inscript-icone " >
             <img class="img-responsive" src="<?= $this->assetUrl('img/inscription-icone.png') ?>" >
           </div>
@@ -33,23 +33,22 @@
           <div class="col-md-8 form-group">
             <label for="fichier">Avatar : </label>
             <input type="file" name="fichier" id="fichier">
-          </div>          
-          <div class="col-md-8 form-group">
+          </div>
+          <div class="col-md-8 form-group hide">
             <label for="adresse">Adresse : </label>
             <input type="text" class="form-control" id="adresse" name='address' required>
           </div>
           <div class="col-md-8 form-group location ">
             <div>
-              <map>
-                <iframe class="location-center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21066.807664393473!2d1.8248370470001813!3d48.69877257340729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e427675a0a9031%3A0x40b82c3688c39d0!2s78610+Le+Perray-en-Yvelines!5e0!3m2!1sfr!2sfr!4v1474470538202" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-              </map>
+              <input id="pac-input" class="controls" type="text" placeholder="Entrer votre adresse *" required>
+              <div style="height:300px" id="map"></div>
             </div>
             </div>
-          <div class="col-md-8 form-group">
+          <div class="col-md-8 form-group hide">
             <label for="cp">Code postal : </label>
             <input type="text" class="form-control" id="cp" name='postalCode'>
           </div>
-          <div class="col-md-8  form-group">
+          <div class="col-md-8  form-group  hide">
             <label for="ville">Ville : </label>
             <input type="text" class="form-control" id="ville" name='city' >
           </div>
@@ -73,7 +72,7 @@
           </div>
         </form>
       </div>
-      
+
     </div>
   </div>
 </section>

@@ -42,6 +42,8 @@ class DefaultController extends Controller
 		$username = htmlentities(strip_tags($_POST['username']));
 		$email = htmlentities(strip_tags($_POST['email']));
 		$avatar = htmlentities(strip_tags($_FILES['fichier']['name']));
+		// var_dump($_FILES);
+		// var_dump($avatar);
 		$address = htmlentities(strip_tags($_POST['address']));
 		$postalCode = htmlentities(strip_tags($_POST['postalCode']));
 		$city = htmlentities(strip_tags($_POST['city']));

@@ -13,13 +13,10 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
 <body>
-
 <div class="container-fluid">
-
 		<header class="container-fluid ">
-
-
 		<div class="row banniere">
+
 			<div class="col-xs-offset-4 col-xs-8 col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9  ">
 				<ul class="bouton1 ">
 				<?php
@@ -28,7 +25,7 @@
 						<li class="item2"><a href="'.$this->url('default_inscription').'">Inscription</a></li>';
 					}
 					else{
-					echo '<li class="item2"> Bienvenue ' .$_SESSION['user']['userName']. '<img class="img-responsive img-avatar" src="' .$this->assetUrl('img/avatar/' .$_SESSION['user']['avatar'] ).'" alt="" ></li>
+					echo '<li class="item2"> Bienvenue <a href="#">' .$_SESSION['user']['userName']. '<img class="img-responsive img-avatar" src="' .$this->assetUrl('img/avatar/' .$_SESSION['user']['avatar'] ).'" alt="" ></a></li>
 
 											<li class="item2"><a href="' .$this->url('default_deconnexion') .'"  class="">
 											<span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>';
@@ -165,6 +162,8 @@
 
 	<script src="<?= $this->assetUrl('js/jquery-3.1.1.min.js') ?>"></script>
 	<script src="<?= $this->assetUrl('js/bootstrap.min.js') ?>"></script>
-
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApPQ7OHH-noQyLM7IMm4kWBR59RNgezus&signed_in=true&libraries=places&callback=initMap"
+        async defer></script>
+				<script src="<?= $this->assetUrl('js/script.js') ?>"></script>
 </body>
 </html>
