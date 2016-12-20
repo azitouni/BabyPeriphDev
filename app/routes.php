@@ -14,6 +14,7 @@ $w_routes = array(
 	['GET', '/annonces/[:theme]', 'Annonce#allAnnonce', 'Annonce_allAnnonce'],//afficher toutes les annonces par thème
 	['GET', '/annonce/[:id]', 'Annonce#detail', 'Annonce_detail'],//afficher le detail de l'annonce
 	['POST', '/annonce/updateDelete/[:id]', 'Annonce#updateDelete', 'annonce_updateDelete'],//update & Delete annonce in db
+	['POST', '/annonce/update/[:id]', 'Annonce#update', 'annonce_update'],//update & Delete annonce in db
 
 	/*créer une page connexion */
 	['GET', '/connexion', 'Default#connexion', 'default_connexion'],
