@@ -73,14 +73,16 @@
 							}
 							?>
 							<li class="nav-item inline">
-								<div class="row">
-									<div class="col-md-9">
-										<input type="text" class="form-control" placeholder="" id="searchAnnonce" name="searchAnnonce">
+								<form class="" action="<?php echo $this->url('Annonce_search'); ?>" method="post">
+									<div class="row">
+										<div class="col-md-9">
+											<input type="text" id="" class="form-control" placeholder="" id="searchAnnonce" name="searchAnnonce">
+										</div>
+										<div class="col-md-3">
+											<button type="submit" class="btn btn-default" id="btnSearch"><span class="glyphicon glyphicon-search"></span> Rechercher</button>
+										</div>
 									</div>
-									<div class="col-md-3">
-										<button type="submit" class="btn btn-default" id="btnSearch"><span class="glyphicon glyphicon-search"></span> Rechercher</button>
-									</div>
-								</div>
+								</form>
 							</li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
