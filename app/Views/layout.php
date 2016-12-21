@@ -9,7 +9,7 @@
 	<link href="<?= $this->assetUrl('img/baby-periph-icon.png') ?>" rel="icon">
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-	
+	<link href="<?= $this->assetUrl('vendor/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
 <body>
@@ -25,7 +25,7 @@
 						<li class="item2"><a href="'.$this->url('default_inscription').'">Inscription</a></li>';
 					}
 					else{
-					echo '<li class="item2"> Bienvenue  '.$_SESSION['user']['userName'].' <img class="img-responsive img-circle img-avatar" src="'.$this->assetUrl('img/avatar/'.$_SESSION['user']['avatar']).'" ></li>
+					echo '<li class="item2"> Bienvenue <a href="#">' .$_SESSION['user']['userName']. '<img class="img-responsive img-avatar" src="' .$this->assetUrl('img/avatar/' .$_SESSION['user']['avatar'] ).'" alt="" ></a></li>
 
 											<li class="item2"><a href="' .$this->url('default_deconnexion') .'"  class="">
 											<span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>';
@@ -72,15 +72,13 @@
 								echo '<li class="nav-item"><a href="' .$this->url('Annonce_myAnnonce') .'">Mes annonces</a></li>';
 							}
 							?>
-							</ul>
-							
-
-							<form class="navbar-form navbar-right" role="search" action="<?php echo $this->url('Annonce_search'); ?>" method="post">
-							  <div class="form-group">
-							    <input type="text" class="form-control" placeholder="Search" id="searchAnnonce" name="searchAnnonce">
-							  </div>
-							  <button type="submit" class="btn btn-default">Rechercher</button>
-							</form>
+						</ul>
+						<form class="navbar-form navbar-right" role="search" action="<?php echo $this->url('Annonce_search'); ?>" method="post">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search" id="searchAnnonce" name="searchAnnonce">
+							</div>
+							<button type="submit" class="btn btn-default">Rechercher</button>
+						</form>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->
 			</nav>
@@ -161,8 +159,6 @@
 			 </div>
 		
 	</footer>
-
-	
 	<script
 			  src="https://code.jquery.com/jquery-1.11.1.min.js"
 			  integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE="
