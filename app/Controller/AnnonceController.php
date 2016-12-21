@@ -223,4 +223,14 @@ class AnnonceController extends Controller {
           </script>";
   	$this->redirectToRoute('default_home');
   }
+
+  public function search(){
+    //var_dump($_POST['searchAnnonce']);
+    $annonce = new annonce();
+    $allAnnonce = $annonce->findAllAnnonceBySearch($_POST['searchAnnonce']);
+    // echo '<pre>';
+    // print_r($allAnnonce);
+    // echo '</pre>';
+    $this->show('annonce/search',['allAnnonce' => $allAnnonce]);
+  }
 }

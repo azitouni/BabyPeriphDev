@@ -8,12 +8,12 @@
 
       
       <div class="col-md-4 descript">
-      <p><strong>Seulement quelques secondes pour vous inscrire...</strong></p>
-      <p><strong>Promis, vous ne serez pas déçu !</strong></p>
+      <p><strong>Seulement quelques secondes pour ajouter une annonce...</strong></p>
+      
           
     </div>
      <div class="col-md-8  inscriptionUser-ajoutAnnonce ">
-       <form class="form-inline" enctype="multipart/form-data" action="<?php if(!isset($detailAnnonce)){echo $this->url('annonce_traitementAnnonce');} else {echo $this->url('annonce_update',['id' => $detailAnnonce['id']]); }  ?>" method="post">
+       <form action="<?php if(!isset($detailAnnonce)){echo $this->url('annonce_traitementAnnonce');} else {echo $this->url('annonce_update',['id' => $detailAnnonce['id']]); }  ?>" method="post">
           <div class="col-md-8  form-group">
             <label for="desc">titre : </label>
              <input type="text" class="form-control" id="nom" name="name" value="<?php if(isset($detailAnnonce)){echo $detailAnnonce['annonceName'];}  ?>" required>
@@ -51,12 +51,14 @@
             <label for="ville">Ville : </label>
             <input type="text" class="form-control" id="ville" name='city'  value="<?php if(isset($detailAnnonce)){echo $detailAnnonce['annonceCity'];}  ?>" required>
           </div>
+          <div class="col-md-8 ">
           <?php if (!isset($detailAnnonce)){
-            echo '<button type="submit" id="validerBtn" name="validBtn" class="btn btn-success"> Valider </button>';
+            echo '<button type="submit" id="valider" class="bouton-sinscrire btn-lg">Valider</button>';
             }
           else {
             echo '<button type="submit" id="majBtn" name="updateBtn" class="btn btn-warning"> Mettre à jour </button>';
           } ?>
+          </div>
         </form>
       </div>
     </div>

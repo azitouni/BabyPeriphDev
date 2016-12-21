@@ -42,6 +42,8 @@ class DefaultController extends Controller
 		$username = htmlentities(strip_tags($_POST['username']));
 		$email = htmlentities(strip_tags($_POST['email']));
 		$avatar = htmlentities(strip_tags($_FILES['fichier']['name']));
+		// var_dump($_FILES);
+		// var_dump($avatar);
 		$address = htmlentities(strip_tags($_POST['address']));
 		$postalCode = htmlentities(strip_tags($_POST['postalCode']));
 		$city = htmlentities(strip_tags($_POST['city']));
@@ -77,11 +79,11 @@ class DefaultController extends Controller
 																'isProfessional' => $isProfessional,
 																'password' => $password]);
 
-		$auth->logUserIn($userData);
+		
 
 		if (isset($avatar) && strlen($avatar)>0) {
 			$avatar = $userData['id'] .'_' .$avatar;
-			$update = $user->Update(['avatar' => $avatar],$userData['id']);
+			$updateUser = $user->Update(['avatar' => $avatar],$userData['id']);
 
 			$file_name = $_FILES['fichier']['name'];
 			 $destination_folder = '../public/assets/img/avatar/' .$userData['id'] .'_'  .$file_name;
@@ -91,7 +93,8 @@ class DefaultController extends Controller
 				 exit($erreur);
 			 }
 		}
-
+		$newUser = $user->find($userData['id']);
+		$auth->logUserIn($newUser);
 		$this->redirectToRoute('default_home');
 	}
 
