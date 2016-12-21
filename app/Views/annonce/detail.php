@@ -1,16 +1,26 @@
 <?php $this->layout('layout', ['title' => 'Détail annonce']) ?>
 
 <?php $this->start('main_content') ?>
-
+<?php  ?>
 
 	<?php if ($detailAnnonce){ ?>
     <div class="row bottom">
     <?php  if (isset($detailAnnonce['imagePrincipale'])) {
-      echo '<div class="preview col-md-6"><img class="img-responsive img-annonce" src="' .$this->assetUrl('img/annonce/') .$detailAnnonce['imagePrincipale'] .'" alt=""></div>';
+      echo '<div class="col-md-6"><img class="img-responsive img-annonce" src="' .$this->assetUrl('img/annonce/') .$detailAnnonce['imagePrincipale'] .'" alt=""></div>';
       }
     else {
       echo '<div class="preview col-md-6"><img class="img-responsive img-annonce" src="' .$this->assetUrl('img/annonce/image_indisponible.png') .'" alt=""></div>';
     }
+		if (isset($detailAnnonce['annonceAddress'])) {
+			echo '<div class="row">
+							<div class="col-md-4 form-group location ">
+								<div>
+									<input id="pac-input" class="controls" type="text" value="' .$detailAnnonce['annonceAddress'] .' ' .$detailAnnonce['annonceCity'] .'" required>
+									<div style="height:300px" id="map"></div>
+								</div>
+							</div>
+						</div>';
+		}
     echo '<div class="col-md-6">
     <h3>' .$detailAnnonce['annonceName'] .'</h3>
 		<h5>
