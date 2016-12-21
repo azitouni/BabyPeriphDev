@@ -35,6 +35,7 @@ class AnnonceController extends Controller {
       $duree = htmlentities(strip_tags($_POST['duree']));
       $address = htmlentities(strip_tags($_POST['address']));
       $city = htmlentities(strip_tags($_POST['city']));
+      $tel = htmlentities(strip_tags($_POST['tel']));
       $imagePrincipale = htmlentities(strip_tags($_FILES['fichier']['name']));
       $selectTypeAnnonce = $_POST['select_type_annonce'];
       //var_dump($address)
@@ -72,6 +73,7 @@ class AnnonceController extends Controller {
       'isService' => $isService,
       'annonceAddress' => $address,
       'annonceCity' => $city,
+      'annoncePhone' => $tel,
       'idUtilisateur' => $user['id']
     ]);
 

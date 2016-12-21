@@ -43,7 +43,7 @@
               <input id="pac-input" class="controls" type="text" placeholder="Entrer votre adresse *" required>
               <div style="height:300px" id="map"></div>
             </div>
-            </div>
+          </div>
           <div class="col-md-8 form-group hide">
             <label for="cp">Code postal : </label>
             <input type="text" class="form-control" id="cp" name='postalCode'>

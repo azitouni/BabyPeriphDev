@@ -9,7 +9,7 @@
 	<link href="<?= $this->assetUrl('img/baby-periph-icon.png') ?>" rel="icon">
 
 	<link href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-
+	<link href="<?= $this->assetUrl('vendor/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
 <body>
@@ -71,26 +71,12 @@
 								echo '<li class="nav-item"><a href="' .$this->url('Annonce_myAnnonce') .'">Mes annonces</a></li>';
 							}
 							?>
-							<li class="nav-item inline">
-								<form class="" action="<?php echo $this->url('Annonce_search'); ?>" method="post">
-									<div class="row">
-										<div class="col-md-9">
-											<input type="text" id="" class="form-control" placeholder="" id="searchAnnonce" name="searchAnnonce">
-										</div>
-										<div class="col-md-3">
-											<button type="submit" class="btn btn-default" id="btnSearch"><span class="glyphicon glyphicon-search"></span> Rechercher</button>
-										</div>
-									</div>
-								</form>
-							</li>
-
-
 						</ul>
-							<form class="navbar-form navbar-right" role="search">
-							  <div class="form-group">
-							    <input type="text" class="form-control" placeholder="Search">
-							  </div>
-							  <button type="submit" class="btn btn-default">Submit</button>
+						<form class="navbar-form navbar-right" role="search" action="<?php echo $this->url('Annonce_search'); ?>" method="post">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search" id="searchAnnonce" name="searchAnnonce">
+							</div>
+							<button type="submit" class="btn btn-default">Rechercher</button>
 						</form>
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->

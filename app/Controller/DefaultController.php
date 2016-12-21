@@ -94,7 +94,15 @@ class DefaultController extends Controller
 			 }
 		}
 
-		$this->redirectToRoute('default_home');
+		if (isset($userData) && $userData['id'] !==0) {
+			$userModel = new UsersModel();
+			$user = $userModel->find($userData['id']);
+			$auth->logUserIn($user);
+			$this->redirectToRoute('default_home');
+		}
+		else {
+			$this->redirectToRoute('default_home');
+		}
 	}
 
 	/**
@@ -125,7 +133,7 @@ public function traitementConnexion()
 		// 	$this->redirectToRoute('admin_index');
 		// }
 		// else {
-		$this->redirectToRoute('default_home');
+		//$this->redirectToRoute('default_home');
 		// }
 
 	}

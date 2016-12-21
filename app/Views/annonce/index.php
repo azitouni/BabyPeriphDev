@@ -6,11 +6,11 @@
   <div class="container">
     <div class="row">
 
-      
+
       <div class="col-md-4 descript">
       <p><strong>Seulement quelques secondes pour vous inscrire...</strong></p>
       <p><strong>Promis, vous ne serez pas déçu !</strong></p>
-          
+
     </div>
      <div class="col-md-8  inscriptionUser-ajoutAnnonce ">
        <form class="form-inline" enctype="multipart/form-data" action="<?php if(!isset($detailAnnonce)){echo $this->url('annonce_traitementAnnonce');} else {echo $this->url('annonce_update',['id' => $detailAnnonce['id']]); }  ?>" method="post">
@@ -51,8 +51,12 @@
             <label for="ville">Ville : </label>
             <input type="text" class="form-control" id="ville" name='city'  value="<?php if(isset($detailAnnonce)){echo $detailAnnonce['annonceCity'];}  ?>" required>
           </div>
+          <div class="col-md-8 form-group">
+            <label for="tel">Télephone : </label>
+            <input type="text" class="form-control" id="tel" name='tel'  value="<?php if(isset($detailAnnonce)){echo $detailAnnonce['annoncePhone'];}  ?>" required>
+          </div>
           <?php if (!isset($detailAnnonce)){
-            echo '<button type="submit" id="validerBtn" name="validBtn" class="btn btn-success"> Valider </button>';
+            echo '<button type="submit" id="validerBtn" name="validBtn" class="bouton-sinscrire btn-lg"> Valider </button>';
             }
           else {
             echo '<button type="submit" id="majBtn" name="updateBtn" class="btn btn-warning"> Mettre à jour </button>';
