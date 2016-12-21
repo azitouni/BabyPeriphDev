@@ -32,7 +32,7 @@
           </div>
           <div class="col-md-8 form-group">
             <label for="fichier">Avatar : </label>
-            <input type="file" name="fichier" id="fichier">
+            <input type="file" accept="image/*"  name="fichier" id="fichier">
           </div>
           <div class="col-md-8 form-group hide">
             <label for="adresse">Adresse : </label>

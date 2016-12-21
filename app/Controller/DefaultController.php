@@ -79,11 +79,11 @@ class DefaultController extends Controller
 																'isProfessional' => $isProfessional,
 																'password' => $password]);
 
-		$auth->logUserIn($userData);
+		
 
 		if (isset($avatar) && strlen($avatar)>0) {
 			$avatar = $userData['id'] .'_' .$avatar;
-			$update = $user->Update(['avatar' => $avatar],$userData['id']);
+			$updateUser = $user->Update(['avatar' => $avatar],$userData['id']);
 
 			$file_name = $_FILES['fichier']['name'];
 			 $destination_folder = '../public/assets/img/avatar/' .$userData['id'] .'_'  .$file_name;
@@ -93,7 +93,6 @@ class DefaultController extends Controller
 				 exit($erreur);
 			 }
 		}
-
 		if (isset($userData) && $userData['id'] !==0) {
 			$userModel = new UsersModel();
 			$user = $userModel->find($userData['id']);

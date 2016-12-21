@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 body{
- background-color: #fefdf0;
-
+	background-color: #fefdf0;
 }
 
 
 header{
-background-color:
 }
 
 footer{
@@ -27,6 +25,156 @@ ul{
 
 
 .panel-heading:hover {
+    cursor:pointer;
+}
+.panel-heading {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+
+.side-tab:hover {
+        cursor: pointer;
+    }
+    .panel.panel-default {
+        border: none;
+        box-shadow: none !important;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        
+    }
+    .panel-heading {
+        border: none;
+        background-color: #eee;
+    
+    }
+    .panel-body {
+        background-color: #f5f5f5;
+    }
+    .panel-title {
+        font-weight: 400;
+        color: $white;
+    }
+
+/*----------------------------------
+    Macbook pro mockup from:
+    http://jaredhardy.com/minimal-devices/
+    
+----------------------------------*/
+
+.md-macbook-pro {
+  display: block;
+  width: 55.3125em;
+  height: 31.875em;
+  font-size: 13px;
+  margin: 0 auto;
+
+  @media (max-width:1199px){
+    font-size: 11px;
+  }
+  @media (max-width:1024px){
+    font-size: 10px;
+  }
+
+  @media (max-width:767px){
+    font-size: 7px;
+  }
+
+  @media (max-width:320px){
+    font-size: 5px;
+  }
+
+}
+.md-macbook-pro .md-lid {
+  width: 45em;
+  height: 30.625em;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 1.875em;
+  border: solid 0.1875em #cdced1;
+  background: #131313;
+}
+.md-macbook-pro .md-camera {
+  width: 0.375em;
+  height: 0.375em;
+  margin: 0 auto;
+  position: relative;
+  top: 1.0625em;
+  background: #000;
+  border-radius: 100%;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+.md-macbook-pro .md-camera:after {
+  content: "";
+  display: block;
+  width: 0.125em;
+  height: 0.125em;
+  position: absolute;
+  left: 0.125em;
+  top: 0.0625em;
+  background: #353542;
+  border-radius: 100%;
+}
+.md-macbook-pro .md-screen {
+  width: 42.25em;
+  height: 26.375em;
+  margin: 0 auto;
+  position: relative;
+  top: 2.0625em;
+  // background: #1d1d1d;
+  background: #fff;
+  overflow: hidden;
+}
+.md-macbook-pro .md-screen img {
+  width: 100%;
+
+}
+.md-macbook-pro .md-base {
+  width: 100%;
+  height: 0.9375em;
+  position: relative;
+  top: -0.75em;
+  background: #c6c7ca;
+}
+.md-macbook-pro .md-base:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.5em;
+  margin: 0 auto;
+  position: relative;
+  bottom: -0.1875em;
+  background: #b9babe;
+  border-radius: 0 0 1.25em 1.25em;
+}
+.md-macbook-pro .md-base:before {
+  content: "";
+  display: block;
+  width: 7.6875em;
+  height: 0.625em;
+  margin: 0 auto;
+  position: relative;
+  background: #a6a8ad;
+  border-radius: 0 0 0.625em 0.625em;
+}
+.md-macbook-pro.md-glare .md-lid:after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 1.25em 0 0;
+  background: -webkit-linear-gradient(37deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+  background: -moz-linear-gradient(37deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+  background: -o-linear-gradient(37deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+  background: linear-gradient(53deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+=======
    cursor:pointer;
 }
 .panel-heading {
@@ -176,27 +324,27 @@ ul{
  background: -moz-linear-gradient(37deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
  background: -o-linear-gradient(37deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
  background: linear-gradient(53deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+
 }
 
 
 
 
 
- .bordure1 a{
-   color: #EF9B0F;
- }
+  .bordure1 a{
+  	color: #EF9B0F;
+  }
 
-
- .annonce-accueil{
- text-align: right;
+  
+  .annonce-accueil{
+	text-align: right;
 }
 .logo{
- background-image: url(../img/logo-3.png);
- background-size: contain;
- background-repeat: no-repeat;
+	background-image: url(../img/logo-3.png);
+	background-size: contain;
+	background-repeat: no-repeat;
 
- height: 100px;
-
+	height: 100px;
 }
 
 li{
@@ -209,8 +357,8 @@ a{
 
 
 .nav-item{
- color: white;
- display: inline-block;
+	color: white;
+	display: inline-block;
 }
 
 
@@ -228,18 +376,13 @@ a{
 
 .menu{
  background-color: #F88E55;
-
-
-
-
 }
 
 
 .banniere a{
 
 background-color: #FFEBCD;
-
- color: #FF6347;
+	color: #FF6347;
 
 }
 
@@ -257,10 +400,9 @@ background-color: #FFEBCD;
 }
 
 .item2{
- display: inline-block;
- padding-right: 20px;
- color: #FF6347;
-
+	display: inline-block;
+	padding-right: 20px;
+	color: #FF6347;
 }
 
 h1{
@@ -278,9 +420,9 @@ h3{
  padding-left: 50px;
 }
 .img-avatar{
- height: 60px;
- padding-left: 20px;
- margin-top: 5px;
+	height: 60px;
+	padding-left: 20px;
+	margin-top: 5px;
 }
 a.annonce {
  color: #FF6347;
@@ -321,9 +463,6 @@ a.annonce {
  footer{
 
  }
-
-
-
 }
 
 
@@ -375,12 +514,12 @@ main{
 
 
 .bouton-news{
- margin-top: 10px;
- margin-right: -153px;
+	margin-top: 10px;
+	margin-right: -153px;
 }
 
 .taille{
- width: 61%;
+	width: 61%;
 }
 .main-menu {
  width:40%;
@@ -395,12 +534,11 @@ main{
 
 
 .inscriptionUser-ajoutAnnonce {
-
-   padding-top: 25px;
-   padding-bottom: 25px;
-   margin-bottom: 50px;
-   margin-top: 50px;
-     /*background-color: rgba(192,192,192,0.3);*/
+		padding-top: 25px;
+		padding-bottom: 25px;
+		margin-bottom: 50px;
+		margin-top: 50px;
+	    /*background-color: rgba(192,192,192,0.3);*/
 
 }
 .descript{
@@ -411,16 +549,15 @@ main{
 }
 .sidebar {
  margin-top: 9%;
+ 	padding: 20px;
+ 	border: 2px solid #FFDAB9;
+    border-radius: 5px;
 
- padding: 20px;
- border: 2px solid #FFDAB9;
-   border-radius: 5px;
-
- background: #FEA347; /* For browsers that do not support gradients */
-   background: -webkit-linear-gradient(#FEA347, #FFDAB9); /* For Safari 5.1 to 6.0 */
-   background: -o-linear-gradient(#FEA347, #FFDAB9); /* For Opera 11.1 to 12.0 */
-   background: -moz-linear-gradient(#FEA347, #FFDAB9); /* For Firefox 3.6 to 15 */
-   background: linear-gradient(#FEA347, #FFDAB9); /* Standard syntax */
+	background: #FEA347; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#FEA347, #FFDAB9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FEA347, #FFDAB9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FEA347, #FFDAB9); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FEA347, #FFDAB9); /* Standard syntax */
 }
 
 
@@ -434,11 +571,11 @@ main{
  float: right;
 }
 .bouton-sinscrire{
- color: #fff;
- border-radius: 10px;
- border: 1px medium #FFDAB9;
- background-color: #DF6D14;
-   background: linear-gradient( #DF6D14, #EF9B0F);
+	color: #fff;
+	border-radius: 10px;
+	border: 1px medium #FFDAB9;
+	background-color: #DF6D14;
+    background: linear-gradient( #DF6D14, #EF9B0F);
 }
 
 .bouton-supp{
@@ -451,27 +588,27 @@ color: #fff;
 }
 
 .bottom{
- margin-bottom: 25px;
+	margin-bottom: 25px;
 }
 
 #map {
-       height: 100%;
-     }
+        height: 100%;
+      }
 #pac-input {
- background-color: #fff;
- font-family: Roboto;
- font-size: 15px;
- font-weight: 300;
- margin-left: 12px;
- padding: 0 11px 0 13px;
- text-overflow: ellipsis;
- width: 300px;
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
 }
 
 #pac-input:focus {
- border-color: #4d90fe;
+  border-color: #4d90fe;
 }
 
 .pac-container {
- font-family: Roboto;
+  font-family: Roboto;
 }
