@@ -14,6 +14,8 @@ $w_routes = array(
 	['GET', '/annonces/[:theme]', 'Annonce#allAnnonce', 'Annonce_allAnnonce'],//afficher toutes les annonces par thème
 	['GET', '/annonce/[:id]', 'Annonce#detail', 'Annonce_detail'],//afficher le detail de l'annonce
 	['POST', '/annonce/updateDelete/[:id]', 'Annonce#updateDelete', 'annonce_updateDelete'],//update & Delete annonce in db
+	['POST', '/annonce/update/[:id]', 'Annonce#update', 'annonce_update'],//update & Delete annonce in db
+	['POST', '/annonce/search', 'Annonce#search', 'Annonce_search'],//afficher liste anoonce résultat recherche
 
 	/* connexion */
 	['GET', '/connexion', 'Default#connexion', 'default_connexion'],
@@ -32,6 +34,14 @@ $w_routes = array(
 	/*page success*/
 	['GET', '/success','Default#traitementSuccess','default_success']
 
+	/*Pourquoi louer?*/
+	['GET', '/pourquoilouer', 'Default#pourquoilouer', 'default_pourquoiLouer'],
+	/*envoie message*/
+	['GET', '/contact', 'contact#index', 'contact_index'],
+	['POST', '/envoi-formulaire', 'contact#traitementForm', 'contact_traitementform'],
 
+	/*Profile*/
+	['POST', '/profile/update[:id]', 'Default#updateProfile', 'default_updateProfile'],//update & Delete annonce in db
+	['GET', '/profile/[:id]', 'Default#profile', 'default_profile'],//update & Delete annonce in db
 
 );

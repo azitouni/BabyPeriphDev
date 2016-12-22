@@ -115,6 +115,22 @@ class annonce extends \W\Model\Model {
 		return $sth->fetchAll();
 	}
 
+  public function findAllAnnonceBySearch($chaine)
+	{
+    //var_dump($vars...)
+    if (isset($chaine)) {
+      $sql = "SELECT  * FROM annonce WHERE  annonceName LIKE '%" .$chaine ."%'  OR annonceDescription LIKE '%" .$chaine ."%' ";
+      //var_dump($sql);
+      $sth = $this->dbh->prepare($sql);
+		  $sth->execute();
+
+		  return $sth->fetchAll();
+    }
+    else {
+      return false;
+    }
+	}
+
   public function findMyAnnonce($loggedUser)
 	{
 

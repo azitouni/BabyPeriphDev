@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 16 Décembre 2016 à 17:34
+-- Généré le :  Mer 21 Décembre 2016 à 16:32
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.23
 
@@ -47,16 +47,18 @@ CREATE TABLE `annonce` (
   `image2` varchar(50) DEFAULT NULL,
   `image3` varchar(50) DEFAULT NULL,
   `dateCreation` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `dateModification` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `dateModification` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `annoncePhone` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table de toutes les annonces';
 
 --
 -- Contenu de la table `annonce`
 --
 
-INSERT INTO `annonce` (`id`, `annonceName`, `annonceDescription`, `idUtilisateur`, `prix`, `dureeDuPrix`, `isLocation`, `isVente`, `isService`, `isDeleted`, `isExpired`, `isDisponible`, `annonceAddress`, `annonceCity`, `imagePrincipale`, `imagefree`, `image1`, `image2`, `image3`, `dateCreation`, `dateModification`) VALUES
-(10, 'Poussette Chico TBE', '7ali madrour ya boutayba dawini', 51, '12', 'semaine', b'1', b'0', b'0', b'0', b'0', b'0', '', '', '10_poussette.jpg', NULL, NULL, NULL, NULL, '2016-12-16 14:39:18', '2016-12-16 14:39:18'),
-(11, 'Lettre A', 'belle letttre A', 51, '10', 'mois', b'1', b'0', b'0', b'0', b'0', b'0', '', '', '11_A.jpg', NULL, NULL, NULL, NULL, '2016-12-16 15:12:13', '2016-12-16 15:12:13');
+INSERT INTO `annonce` (`id`, `annonceName`, `annonceDescription`, `idUtilisateur`, `prix`, `dureeDuPrix`, `isLocation`, `isVente`, `isService`, `isDeleted`, `isExpired`, `isDisponible`, `annonceAddress`, `annonceCity`, `imagePrincipale`, `imagefree`, `image1`, `image2`, `image3`, `dateCreation`, `dateModification`, `annoncePhone`) VALUES
+(10, 'Poussette Chicco TBE', 'Poussette en tr&egrave;s bon &eacute;tat jamais servi', 51, '12', 'semaine', b'1', b'0', b'0', b'0', b'0', b'0', '05 rue de l''&eacute;glise', 'Paris', '10_poussette.jpg', NULL, NULL, NULL, NULL, '2016-12-16 14:39:18', '2016-12-21 15:45:41', '01010101'),
+(16, 'Service assiettes pour b&eacut', 'une service d''assiettes pour b&eacute;b&eacute; en excellent &eacute;tat. prix ferme ', 53, '56', '', b'0', b'1', b'0', b'0', b'0', b'0', '5 rue de l''&eacute;glise', 'Le perray en yvelines', '16_assietteCuiereTasse.jpg', NULL, NULL, NULL, NULL, '2016-12-20 10:13:39', '2016-12-21 15:45:41', '01010101'),
+(18, 'Table &agrave; manger pour b&a', 'Une super table &agrave; manger tr&egrave;s pratique', 53, '69', '', b'0', b'1', b'0', b'0', b'0', b'0', '5 rue de l''&eacute;glise', 'Paris', '18_tableBB.jpg', NULL, NULL, NULL, NULL, '2016-12-20 14:44:09', '2016-12-21 15:45:41', '01010101');
 
 --
 -- Déclencheurs `annonce`
@@ -175,35 +177,21 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `lastName`, `firstName`, `avatar`, `userName`, `address`, `postalCode`, `city`, `phone`, `email`, `score`, `isAdmin`, `isPremium`, `isProfessional`, `password`, `token`, `isDeleted`, `dateCreation`, `dateModification`) VALUES
-(4, 'zitouni', 'ddd', NULL, '', '', '', '', '', '', NULL, b'0', b'0', b'0', '$2y$10$a5Se2pbZbbvYnlB1AZoqmOt79OIUn.haSzNlhq7FR/RRrvIjsdEI6', '', b'0', '2016-12-14 14:54:30', '2016-12-14 14:54:30'),
-(9, 'ff', 'ff', NULL, 'fff', '05 rue de l''église', '75000', 'Paris', '0654879652', 'chuck@noris.com', NULL, b'0', b'0', b'0', '$2y$10$uTwPczmqaU0hwFhppj64fun9KisGSYqe92Wzt5IezOFgOSdcvXu1W', '', b'0', '2016-12-14 15:13:55', '2016-12-14 15:13:55'),
-(17, 'NORIS', 'Chuck', NULL, 'zitouniadel@hotmail.com', '05 rue de l''église', '75000', 'Paris', 'webforce3', 'hgfhgfhgf@mail.com', NULL, b'0', b'1', b'0', '$2y$10$HhNDUNljhJ9SrXYdaAf5fO3r5JjU52Ks0arqJ4LJNDcaAhcfb1P/G', '', b'0', '2016-12-14 15:31:55', '2016-12-14 15:31:55'),
-(18, 'Mou', 'Nira', NULL, 'mounira', '05 rue de l''église', '75000', 'Paris', 'webforce3', 'mounira@hotmail.com', NULL, b'0', b'1', b'0', '$2y$10$Sr5qcGQpVWK.O/FTpiBEI.ThhNs7NcuP.wxks6r28G4m0Dsn58wzS', '', b'0', '2016-12-14 15:58:34', '2016-12-14 15:58:34'),
-(19, 'zz', 'zz', NULL, 'zz', 'e', 'e', 'e', 'webforce3', 'zitouniadel@hotmail2.com', NULL, b'0', b'0', b'0', '$2y$10$y2h4zDga1UupCREpbzHX8.V7Wu3sK0CyieY5SmGnZEBEWKkx2fHc2', '', b'0', '2016-12-14 15:59:57', '2016-12-14 15:59:57'),
-(20, 'eer', 'rrrr', NULL, 'rrr', 'rr', 'rr', 'rr', 'webforce3', 'zitouniadel@hotmail3.com', NULL, b'0', b'0', b'1', '$2y$10$EYgIr7A0QjH5osLMdYMKf.TPlWh2fPSGWTx9xv0s9RxNxF7.MxfV.', '', b'0', '2016-12-14 16:00:42', '2016-12-14 16:00:42'),
-(21, 'hhr', 'hh', NULL, 'hfhh', 'hhdf', 'hdf', 'fd', 'webforce3', 'fhb', NULL, b'0', b'0', b'0', '$2y$10$uybEAD0I00ojzM2l.kJ1rONKFGNuztHETOWxgBpKA2qfAyd8fomgu', '', b'0', '2016-12-14 16:14:30', '2016-12-14 16:14:30'),
-(22, 'guel', 'mou', 'descktop01.jpg', 'gmou', '05 rue de l''&eacute;glise', '78000', 'versailles', '021478545', 'gmoun@cc.com', NULL, b'0', b'1', b'0', '$2y$10$EtRJqfHstOIVSO2GBk3GBO91zbWBP5GphgCbfAt8Jfv869n1viO2.', '', b'0', '2016-12-14 16:31:31', '2016-12-14 16:31:31'),
-(24, 'yy', 'yy', 'descktopBack.png', 'yyy', 'rrrr', '4587', 'rrrr', '15565555', 'ktr@dzs.fr', NULL, b'0', b'0', b'1', '$2y$10$iZZm37.RnqmVX.GqNwtFBeF.l/OVzVSn4tYofCiDDr1lptu77yY36', '', b'0', '2016-12-14 16:35:48', '2016-12-14 16:35:48'),
-(26, 'ded', 'ddd', 'descktop01.jpg', 'dd', 'ded', '785', 'dddd', '785432', 'gr@ger.ff', NULL, b'0', b'0', b'0', '$2y$10$u7l9u77AIMEXPWQj1za4PO.VEsB9tuRevOBLgV79xwu/.rIXuaZp6', '', b'0', '2016-12-14 16:39:35', '2016-12-14 16:39:35'),
-(28, 'ryet', 'red', 'descktopBack.png', 'rte', 'grfd', '4578', 'u&egrave;y', '5876', 'oiop@hfs.fr', NULL, b'0', b'1', b'0', '$2y$10$eigyY6TLuFk07QX1VpK7mORDdQEjNRSsVDxgYtWMJQLXSHkpRUBg2', '', b'0', '2016-12-14 16:44:20', '2016-12-14 16:44:20'),
-(30, 'p', 'p', 'descktopBack.png', 'p', 'p', 'p', 'p', 'webforce3', 'p@p.hy', NULL, b'0', b'0', b'0', '$2y$10$7IfGKl6PDPlIy7wO7EG6Z.XChIeAYkIe1Z90Jw9mJTAH/xYwOAHt2', '', b'0', '2016-12-14 16:53:10', '2016-12-14 16:53:10'),
-(31, 't', 't', 'descktop01.jpg', 't', 't', 't', 't', 'webforce3', 't@t.t', NULL, b'0', b'0', b'0', '$2y$10$AHd2piB5inK05ZR6ADG46OP88Oc6iE6FpZGdeKMBa6FO6N8ilHb2G', '', b'0', '2016-12-14 16:59:19', '2016-12-14 16:59:19'),
-(33, 'u', 'u', '', 'u', 'u', 'u', 'u', 'webforce3', 'u@u.u', NULL, b'0', b'0', b'0', '$2y$10$oy1jpu71EDGiv7QbYrt.ce6UmIxAR77cg/LdC0DJdNzYiLVHAB5ye', '', b'0', '2016-12-14 17:03:06', '2016-12-14 17:03:06'),
-(34, 'i', 'i', '', 'i', 'i', 'i', 'i', 'webforce3', 'i@i.i', NULL, b'0', b'0', b'0', '$2y$10$w4uhQnrybXWc2meVq0ROGuxpOi0pnMFPIxwyurEsOWX7Vui8ogA6u', '', b'0', '2016-12-14 17:05:02', '2016-12-14 17:05:02'),
-(35, 'o', 'o', 'descktop01.jpg', 'o', 'o', 'o', 'o', 'webforce3', 'o@o.o', NULL, b'0', b'0', b'0', '$2y$10$1MvVYeTKNVkC/L4bjU2dB.TnK.ZGdPdnt7SUG1JRNG8igTbeW4NQ.', '', b'0', '2016-12-14 17:07:14', '2016-12-14 17:07:14'),
-(36, 'q', 'q', 'descktop01.jpg', 'q', 'q', 'q', 'q', 'webforce3', 'q@q.q', NULL, b'0', b'0', b'0', '$2y$10$wiQdvf4fNNOWKTaY7yn2keVFcEVQYzW1Bt6kXI2nFRHbBHJuZkVZC', '', b'0', '2016-12-14 17:09:00', '2016-12-14 17:09:00'),
-(37, 's', 's', 'descktop01.jpg', 's', 's', 's', 's', 'webforce3', 's@s.s', NULL, b'0', b'0', b'0', '$2y$10$6dRJ1uJlt3Yev4K4.5UfSeXLKIufi6uLRCGxVKasqFnY0p1XWX2cy', '', b'0', '2016-12-14 17:16:11', '2016-12-14 17:16:11'),
-(38, 'd', 'd', NULL, 'd', 'e', 'e', 'e', 'webforce3', 'd@d.d', NULL, b'0', b'0', b'0', '$2y$10$Aw0H1NCeu0D4cVgq/h1jX./2JlG.wL1ZnufCS1OH1hxbVNVG2BV2O', '', b'0', '2016-12-14 17:24:51', '2016-12-14 17:24:51'),
-(39, 'ff', 'ff', NULL, 'fff', 'f', 'f', 'fd', 'webforce3', 'f@f.f', NULL, b'0', b'0', b'0', '$2y$10$3KbVAssg6GSxNc//ZWXpVeYyfHZhMNi/Nt1gcmLoBeR0u0doAoS7a', '', b'0', '2016-12-14 17:30:32', '2016-12-14 17:30:32'),
-(40, 'g', 'g', NULL, 'g', 'g', 'g', 'g', 'webforce3', 'gr@ger2.ff', NULL, b'0', b'0', b'0', '$2y$10$8DoPlm639cX5pvDaZHQjKuSAoUEbKUGx1u0ahVyCG4PIdhER3FFei', '', b'0', '2016-12-14 17:32:43', '2016-12-14 17:32:43'),
-(41, 'h', 'h', NULL, 'h', 'h', 'h', 'h', 'webforce3', 'h@h.h', NULL, b'0', b'0', b'0', '$2y$10$wvevC8gGiunp0sooMUVl5eWnuPDDtbP45vkppJ5u3x1li4X.NjD0K', '', b'0', '2016-12-14 17:35:38', '2016-12-14 17:35:38'),
-(42, 'j', 'j', '42_descktopBack.png', 'j', 'j', 'j', 'j', 'webforce3', 'j@j.j', NULL, b'0', b'0', b'0', '$2y$10$KOQinnvUxIW.75MUdxIMoOOS1IFDW22mdHBNj1aLLEGZLVULwXNPu', '', b'0', '2016-12-14 17:37:11', '2016-12-14 17:37:11'),
-(43, 'n', 'n', '43_descktopBack.png', 'n', 'n', 'n', 'n', 'webforce3', 'n@n.n', NULL, b'0', b'1', b'0', '$2y$10$bIO.pPMyZL4vajQhkwaiF./mMnMNGtH/mu3tBTTtsDSIFxQpIAeIW', '', b'0', '2016-12-15 09:31:40', '2016-12-15 09:31:40'),
-(46, 'w', 'w', '46_', 'w', 'w', 'w', 'w', 'webforce3', 'w@w.w', NULL, b'0', b'0', b'0', '$2y$10$bG.eUmzKRrpRqFOhkB/VHeQZYhzFGJgYdiFoIdtraZ7CO0vdyL.l6', '', b'0', '2016-12-15 09:46:50', '2016-12-15 09:46:50'),
-(47, 'x', 'x', '47_', 'x', 'x', 'x', 'x', 'webforce3', 'x@x.x', NULL, b'0', b'0', b'0', '$2y$10$EaCAgL2lQ8oYVWDqqmJB.OEIA7xllv01wf0QA.znIZ/aJxveux1Za', '', b'0', '2016-12-15 09:48:18', '2016-12-15 09:48:18'),
-(48, 'c', 'c', NULL, 'c', 'c', 'c', 'c', 'webforce3', 'c@c.c', NULL, b'0', b'0', b'0', '$2y$10$Knm2hAGVwNd8AOFNojpiD.9Pq9jr6OJstXclpkfipEtikBW8DpwE6', '', b'0', '2016-12-15 09:49:51', '2016-12-15 09:49:51'),
 (51, 'Mou', 'Nira', NULL, 'mouna', 'm', 'm', 'm', '0111111111', 'm@m.m', NULL, b'0', b'0', b'0', '$2y$10$Zi/82X86tCZD6vvI9UZTeuBkXynHnGyGnXnVYtzCObcn4maqW59py', '', b'0', '2016-12-15 16:50:54', '2016-12-15 16:50:54'),
-(52, 'pan', 'seb', '52_P.jpg', 'seb', 's', 's', 's', '024788', 'seb@seb.fr', NULL, b'0', b'1', b'0', '$2y$10$EkJoKFM0prgjFNwrJK9rWOhz.0HkjTIDNEC9iVT3/qX3XepOYypuq', '', b'0', '2016-12-15 17:35:09', '2016-12-15 17:35:09');
+(52, 'pan', 'seb', '52_P.jpg', 'seb', 's', 's', 's', '024788', 'seb@seb.fr', NULL, b'0', b'1', b'0', '$2y$10$EkJoKFM0prgjFNwrJK9rWOhz.0HkjTIDNEC9iVT3/qX3XepOYypuq', '', b'0', '2016-12-15 17:35:09', '2016-12-15 17:35:09'),
+(53, 'zitouni', 'adel', '53_adel-zitouni-icone-fr4.png', 'Adel', 'maurepas', '78310', 'maurepas', '0111111111', 'adel@amsg.asso.fr', NULL, b'0', b'1', b'0', '$2y$10$oKXes6BWvt6BECFMQochveNypHIOiALiIvBqnO8HQ/2ebx4FLpeDW', '', b'0', '2016-12-19 12:05:00', '2016-12-19 12:05:00'),
+(54, 'tati', 'tatou', '54_I.jpg', 'Jean', '6 rue du pont', '75300', 'Paris', '0123654789', 'j@j.j', NULL, b'0', b'1', b'0', '$2y$10$PiIgjizYb9l9V3XxKOjOX.GII2R48fvBqE7NbngQPHZBDU2o54oMa', '', b'0', '2016-12-20 14:54:29', '2016-12-20 14:54:29'),
+(55, 'rat', 'souris', NULL, 'ratatouille', '12 Rue de Rivoli', '75004', 'Paris', '02145887', 'o@o.ot', NULL, b'0', b'1', b'0', '$2y$10$nUy5mTnMje/n2ukk0JN7q.4rsQdK7ROsh8gKP4BQuSFDoQ6e2GWOO', '', b'0', '2016-12-20 19:07:49', '2016-12-20 19:07:49'),
+(56, 'michel ', 'polnareff', NULL, 'michou', '56 Rue du G&eacute;n&eacute;ral Leclerc', '94000', 'Cr&eacute;teil', '0125478', 'm@mi.ou', NULL, b'0', b'1', b'0', '$2y$10$zGisPSfQlUpOtkmaesF1Gu2Safxrke9q1BHkepDT2gDa63zur3eye', '', b'0', '2016-12-20 19:09:41', '2016-12-20 19:09:41'),
+(57, 'hrhzj', 'rjhzj', '57_I.jpg', 'jhrzj', '35 Rue du Temple', '75004', 'Paris', '2547', 'test@a', NULL, b'0', b'1', b'0', '$2y$10$xxUIgNzEJTPAUt8h42Xi..ndId1zaQ.CnuflOUSvNqVq2zTKFJLHi', '', b'0', '2016-12-20 19:19:04', '2016-12-20 19:19:04'),
+(58, 'Momo', 'JIJI', '58_P.jpg', 'Dada', 'Annaba Wilaya d''Annaba', '', '', '0125478', 'fifi@foufou.dz', NULL, b'0', b'1', b'0', '$2y$10$1riPWDPcw2CH6/wivzlR6OvRPvnPskaDfPgrDX4CfU8Gt/nEx01aS', '', b'0', '2016-12-21 10:02:41', '2016-12-21 10:02:41'),
+(59, 'Mon ', 'B&eacute;b&eacute;', '59_baby-periph-icon.png', 'Bambi', 'Wilaya de Souk Ahras Alg&eacute;rie', '', '', '254785', 'bebe@tonton.fr', NULL, b'0', b'0', b'0', '$2y$10$m4IMuTj7vcIxsWK9D6T7R.yfY4AJQ1.nyaNYKZHMXjFz2Yx7Svgfm', '', b'0', '2016-12-21 10:19:44', '2016-12-21 10:19:44'),
+(60, 'tt,k', ',u,', '60_I.jpg', 'uy,u,k', 'M''Daourouch Wilaya de Souk Ahras', '', '', '251478', 'a@p.g', NULL, b'0', b'0', b'0', '$2y$10$lWnKux3qIzmuMsg1oIAPc.mSInSqIzEmowxN.onAsb80FYHW/GNvK', '', b'0', '2016-12-21 10:44:56', '2016-12-21 10:44:56'),
+(61, 'yjtyj,,y', ',t,,,t', '61_I.jpg', 'kjbjfhb', 'Paris Paris', '', '', '258741', 'o.p@.gt.y', NULL, b'0', b'0', b'0', '$2y$10$LXcB99s/SUCKhxt4hEpnD.U/iOBkbyxyive/111wNP73F.3.OwA2y', '', b'0', '2016-12-21 10:47:39', '2016-12-21 10:47:39'),
+(63, 'yjtyj,,yjjyk', ',t,,,tjkjk', '63_I.jpg', 'aziz', 'Bruxelles Bruxelles', '', '', '258741', 'o.p@gt.yy', NULL, b'0', b'0', b'0', '$2y$10$EE9UI0MKz2s.tA2b9NRFZ.5UJk3AT6waIYjMubqy23M2qxB1ukOVq', '', b'0', '2016-12-21 10:54:23', '2016-12-21 10:54:23'),
+(65, 'yjtyj,,yjjyk', ',t,,,tjkjk', '65_I.jpg', 'aziza', 'Bonneuil-sur-Marne Val-de-Marne', '', '', '258741', 'po.p@gt.yy', NULL, b'0', b'0', b'0', '$2y$10$WZ7cGN3hKLrld/uae/0tnOOQK20wxIQjn7fNwwnjvPQ1BUJ.w/bSW', '', b'0', '2016-12-21 10:58:19', '2016-12-21 10:58:19'),
+(66, 'yjtyj,,yjjyk', ',t,,,tjkjk', '66_I.jpg', 'azizan', 'Trappes Yvelines', '', '', '258741', 'apo.p@gt.yy', NULL, b'0', b'0', b'0', '$2y$10$OqbEwjrDvBDh2Mq7dObjzOeML55xjbwE6MWrYH/hAeYuUZwqm4xbW', '', b'0', '2016-12-21 11:00:18', '2016-12-21 11:00:18'),
+(67, 'Moh', 'koul', '67_Mags_team.png', 'ourouh', 'Le Perray-en-Yvelines Yvelines', '', '', '123', 'az@p.p', NULL, b'0', b'0', b'0', '$2y$10$C7v.hXg0RlAINOvcR.gV0eg1pKdnk/ziAR5msn6AlLOmomkBZQdy.', '', b'0', '2016-12-21 11:02:44', '2016-12-21 11:02:44');
 
 --
 -- Déclencheurs `utilisateur`
@@ -266,7 +254,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `annonce`
 --
 ALTER TABLE `annonce`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `categorie`
 --
@@ -286,7 +274,7 @@ ALTER TABLE `panier`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 --
 -- Contraintes pour les tables exportées
 --

@@ -1,8 +1,8 @@
 
-<?php $this->layout('layout', ['title' => 'Liste des annonces']) ?>
+<?php $this->layout('layout', ['title' => 'Recherche']) ?>
 
 <?php $this->start('main_content') ?>
-	
+	<h2>Résultat de recherche </h2>
   <?php
   // echo '<pre>';
   // print_r($allAnnonce);
