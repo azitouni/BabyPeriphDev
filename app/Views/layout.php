@@ -50,7 +50,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="">
-							<a class="navbar-brand " href="<?php echo $this->url('default_home'); ?>">Accueil</a>
+							<a class="navbar-brand " href="<?php echo $this->url('default_home'); ?>"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Accueil</a>
 						</div>
 						
 
@@ -63,9 +63,9 @@
 						<ul class="nav navbar-nav main-menu col-md-8">
 							
 							
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>"><i class="fa fa-clock-o" aria-hidden="true"></i>Location</a></li>
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>"><i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i>Vente</a></li>
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>"><i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i>Services</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> Location</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>"><i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i> Vente</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>"><i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i> Services</a></li>
 							<li class="nav-item gogo"><a href="<?php
 							if (!isset($_SESSION['user'])) {
 								echo '' .$this->url('default_connexion') .'';
@@ -73,7 +73,7 @@
 							else{
 								echo '' .$this->url('Annonce_index') .'';
 							}
-							?>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>Déposer une annonce</a></li>
+							?>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> Déposer une annonce</a></li>
 							<?php if (isset($_SESSION['user'])) {
 								echo '<li class="nav-item"><a href="' .$this->url('Annonce_myAnnonce') .'">Mes annonces</a></li>';
 							}

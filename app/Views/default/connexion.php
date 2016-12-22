@@ -13,4 +13,7 @@
     </div>    
 	  <button type="submit" name="button" class="btn btn-success"> Connexion </button>
 	</form>
+
+<a class="lienMdp" href="<?= $this->url('default_lostPassword') ?>">Mot de passe oublié ?</a>
+
 <?php $this->stop('main_content') ?>

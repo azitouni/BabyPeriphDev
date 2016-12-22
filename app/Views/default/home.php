@@ -7,6 +7,10 @@
 <div class="container">
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
+<?php if(isset($_SESSION['success'])){
+  echo '<h1 class="success">' . $_SESSION['success'] . '</h1>';
+  unset($_SESSION['success']);
+} ?>
  <h1 class="titre3 text-center">Dernières Annonces</h1>
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

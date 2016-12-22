@@ -24,5 +24,14 @@ $w_routes = array(
 	['GET', '/planDeSite', 'Default#sitemap', 'default_sitemap'],
 
 	/*mot de passe perdu */
-	['GET', '/motDePassePerdu', 'Default#lost','default_lostPassword']
+	['GET', '/motDePassePerdu', 'Default#lost','default_lostPassword'],
+	['POST', '/motDePassePerdu', 'Default#traitementLost','default_traitementLost'],
+
+	['GET', '/motDePassePerdu/[:token]/[:id]', 'Default#changementMdp','modifier_mdp'],
+	['POST', '/changementMdp', 'Default#traitementChangementMdp','default_changementMdp'],
+	/*page success*/
+	['GET', '/success','Default#traitementSuccess','default_success']
+
+
+
 );

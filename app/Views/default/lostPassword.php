@@ -1,7 +1,11 @@
 <?php $this->layout('layout', ['title' => 'mot de passe perdu']) ?>
 
 <?php $this->start('main_content') ?>
-<form method="post" action="<?= $this->assetUrl('lost2.php') ?>">  
+<?php if(isset($_SESSION['erreur'])){
+  echo '<h1>' . $_SESSION['erreur'] . '</h1>';
+  unset($_SESSION['success']);
+} ?>
+<form method="post" action="<?= $this->url('default_traitementLost') ?>">  
   <div class="row">
     <div class="col-md-offset-4 col-md-4">
 	  <div class="form-group">
