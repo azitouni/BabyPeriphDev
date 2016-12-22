@@ -152,6 +152,10 @@ class AnnonceController extends Controller {
     elseif (isset($_POST['updateBtn'])) {
       $this->show('annonce/index',['detailAnnonce' => $detailAnnonce]);
     }
+
+ 
+
+    
   }
 
   public function update($id){

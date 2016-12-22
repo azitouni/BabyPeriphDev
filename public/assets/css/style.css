@@ -357,7 +357,12 @@ a{
 
 }
 
+.banniere{
+	background-color:#00BFFF;
 
+	
+	color: white;
+}
 .bouton2{
  margin-top: 10px;
 }
@@ -370,10 +375,8 @@ a{
 
 
 .banniere a{
-
-background-color: #FFEBCD;
+	background-color: #FFEBCD;
 	color: #FF6347;
-
 }
 
 
@@ -381,8 +384,11 @@ background-color: #FFEBCD;
  color: white;
 }
 
-
-
+.item1{
+	margin-right: 0;
+	color: white;
+	display: inline-block;
+}
 .item{
  /*margin-right: 0;*/
  color: white;
@@ -427,7 +433,9 @@ a.annonce {
 .navbar-default .navbar-brand{
  color: white;
 }
-
+.accueil{
+ 	margin-left: 0;
+ }
 @media screen and (min-width: 768px){
  .main-menu {
    text-align: center;
@@ -451,16 +459,16 @@ a.annonce {
  }
 
  footer{
-
  }
 }
 
-
+.main-menu{
+	float: right;
+}
 
 .contenu{
  height: 1000px;
  background-color: #fefdf0;
-
 }
 
 
@@ -493,11 +501,9 @@ main{
  margin-left: 215px;
 }
 
-
 .bouton3{
  margin-left: px;
 }
-
 .news{
  text-align: center;
 }
@@ -602,6 +608,79 @@ color: #fff;
   border-color: #4d90fe;
 }
 
+
 .pac-container {
   font-family: Roboto;
+}
+
+
+
+.plan a{
+	color: black;
+	
+
+}
+.plan li::before {
+    content: "\21D2";
+    position: relative;
+    left: -10px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    color: black;
+
+
+}
+
+
+.plan li{
+	margin-top: 20px;
+}
+
+.categorie-item{
+	
+
+}
+
+.essai {
+	margin-top: 30px;
+
+}
+
+hr{
+    height: 0;
+    margin: 40px 0 5px;
+    padding: 0;
+    border: 1px solid red;
+    font-family: arial;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1;
+    color: red;
+}
+
+.small{
+	width:100%;
+}
+
+.carousel{
+    margin-top: 75px;
+}
+.titre{
+	margin-bottom: 75px;
+}
+
+.description{
+	
+	height: 100px;
+}
+
+
+
+.lienMdp{
+	color: black;
+}
+
+.lienAcceuil{
+	color:black;
 }

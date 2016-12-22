@@ -1,9 +1,11 @@
 <?php $this->layout('layout', ['title' => '']) ?>
 
 <?php $this->start('main_content') ?>
-	
 
-
+<?php if(isset($_SESSION['success'])){
+  echo '<h1 class="success">' . $_SESSION['success'] . '</h1>';
+  unset($_SESSION['success']);
+} ?>
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -99,8 +101,5 @@
         </div> <!-- / .col-md-8 -->
     </div> <!--/ .row -->
 </div> <!-- end sidetab container -->
-
-
-
 
 <?php $this->stop('main_content') ?>

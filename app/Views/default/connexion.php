@@ -1,7 +1,6 @@
 <?php $this->layout('layout', ['title' => 'Connexion']) ?>
 
 <?php $this->start('main_content') ?>
-
 <section class="fond">
   <div class="row">
     <div class="container">
@@ -29,6 +28,7 @@
       <a href="<?php echo $this->url('default_inscription'); ?>">je suis nouveau sur BabyPeriph</a>
       </div>
     </form>
+    <a class="lienMdp" href="<?= $this->url('default_lostPassword') ?>">Mot de passe oublié ?</a>
   </div>
 </div>
 </div>

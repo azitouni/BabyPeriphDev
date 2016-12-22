@@ -7,7 +7,7 @@ $w_routes = array(
 	['GET', '/inscription', 'Default#inscription', 'default_inscription'],
 	['POST', '/inscription', 'Default#traitementInscription', 'default_traitementInscription'],
 
-	/*Annoce*/
+	/*Annonce*/
 	['GET', '/annonce', 'Annonce#index', 'Annonce_index'],//Créer nouvelle annonce
 	['POST', '/annonce', 'Annonce#traitementAnnonce', 'annonce_traitementAnnonce'],//save annonce in db
 	['GET', '/annonces', 'Annonce#myAnnonce', 'Annonce_myAnnonce'],//afficher annonces utilisateur
@@ -17,10 +17,22 @@ $w_routes = array(
 	['POST', '/annonce/update/[:id]', 'Annonce#update', 'annonce_update'],//update & Delete annonce in db
 	['POST', '/annonce/search', 'Annonce#search', 'Annonce_search'],//afficher liste anoonce résultat recherche
 
-	/*créer une page connexion */
+	/* connexion */
 	['GET', '/connexion', 'Default#connexion', 'default_connexion'],
 	['POST', '/connexion', 'Default#traitementConnexion', 'default_traitementConnexion'],
 	['GET', '/deconnexion', 'Default#deconnexion', 'default_deconnexion'],
+
+	/*Plan de site*/
+	['GET', '/planDeSite', 'Default#sitemap', 'default_sitemap'],
+
+	/*mot de passe perdu */
+	['GET', '/motDePassePerdu', 'Default#lost','default_lostPassword'],
+	['POST', '/motDePassePerdu', 'Default#traitementLost','default_traitementLost'],
+
+	['GET', '/motDePassePerdu/[:token]/[:id]', 'Default#changementMdp','modifier_mdp'],
+	['POST', '/changementMdp', 'Default#traitementChangementMdp','default_changementMdp'],
+	/*page success*/
+	['GET', '/success','Default#traitementSuccess','default_success']
 
 	/*Pourquoi louer?*/
 	['GET', '/pourquoilouer', 'Default#pourquoilouer', 'default_pourquoiLouer'],

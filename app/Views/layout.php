@@ -40,8 +40,8 @@
 			<div class="col-xs-offset-1 col-xs-10  col-md-8 col-md-offset-2 logo"></div>
 		</div>
 		<div class="row ">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid menu">
+			<nav class="navbar navbar-default menu">
+				
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -50,24 +50,31 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="<?php echo $this->url('default_home'); ?>">Acceuil</a>
+						<div class="">
+							<a class="navbar-brand " href="<?php echo $this->url('default_home'); ?>"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Accueil</a>
+						</div>
+						
+
+						
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-						<ul class="nav navbar-nav main-menu">
-							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>">Location</a></li>
-							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>">Vente</a></li>
-							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>">Services</a></li>
-							<li class="nav-item"><a href="<?php
+						<ul class="nav navbar-nav main-menu col-md-8">
+							
+							
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> Location</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>"><i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i> Vente</a></li>
+							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>"><i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i> Services</a></li>
+							<li class="nav-item gogo"><a href="<?php
 							if (!isset($_SESSION['user'])) {
 								echo '' .$this->url('default_connexion') .'';
 							}
 							else{
 								echo '' .$this->url('Annonce_index') .'';
 							}
-							?>">Déposer une annonce</a></li>
+							?>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> Déposer une annonce</a></li>
 							<?php if (isset($_SESSION['user'])) {
 								echo '<li class="nav-item"><a href="' .$this->url('Annonce_myAnnonce') .'">Mes annonces</a></li>';
 							}
@@ -80,9 +87,13 @@
 							<button type="submit" class="btn btn-default">Rechercher</button>
 						</form>
 					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
+				<!-- /.container-fluid -->
 			</nav>
 		</div>
+		
+		
+		
+		
 	</header>
 
 
@@ -99,40 +110,27 @@
 			<div class="container-fluid">
 				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-2 col-md-offset-2 col-sm-6 footer-nav">
 					<h3 class="">Informations</h3>
-					<ul>
+					
 						<li><a href="">Paiement sécurisé</a></li>
 						<li><a href="">Programme fidélité</a></li>
 						<li><a href="">Nos partenaires</a></li>
 						<li><a href="">Questions fréquentes</a></li>
-					</ul>
+					
 				</div>
-				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
+				<div class="col-xs-5 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
 					<h3 class="">A propos</h3>
-					<ul>
+					
 						<li><a href="">Qui sommes nous ?</a></li>
 						<li><a href="">Avis clients</a></li>
 						<li><a href="">Mentions légales</a></li>
 						<li><a href="<?php echo ''.$this->url('contact_index').''?>">Contact</a></li>
 						<li><a href="">Conditions générales</a></li>
+						<li><a href="">FAQ</a></li>
 						<li><a href=" <?php
 								echo '' .$this->url('default_pourquoiLouer') .'';  ?>">Matériel puériculture: Pourquoi louer?</a></li>
-						<li><a href="">Plan du site</a></li>
+						<li><a href="<?php echo $this->url('default_sitemap'); ?>">Plan du site</a></li>
 					</ul>
 				</div>
-				<div class="col-xs-12 col-md-3 footer-nav text-center">
-					<h3 class="news">Newsletter</h3>
-					<form class="form-group">
-						<div class="input-group">
-  							<span class="input-group-addon" id="basic-addon1">@</span>
-  							<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-						</div>
-					</form>
-
-
-
-
-
-
 					<ul class="list-inline">
 						<li>
 							<a href="https://www.facebook.com/gino.robertot" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="<?= $this->assetUrl('img/facebook.png') ?>" alt=""></a>
@@ -146,14 +144,10 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-
-
 			<div class=" text-center ">
 
 				<p><strong>&copy; 2016 MA<img class ="img-taille" src="<?= $this->assetUrl('img/Mags_team.png') ?>"> GS Team  </strong></p>
 			 </div>
-
 	</footer>
 	<script
 			  src="https://code.jquery.com/jquery-1.11.1.min.js"
