@@ -27,5 +27,9 @@ $w_routes = array(
 	/*envoie message*/
 	['GET', '/contact', 'contact#index', 'contact_index'],
 	['POST', '/envoi-formulaire', 'contact#traitementForm', 'contact_traitementform'],
-	
+
+	/*Profile*/
+	['POST', '/profile/update[:id]', 'Default#updateProfile', 'default_updateProfile'],//update & Delete annonce in db
+	['GET', '/profile/[:id]', 'Default#profile', 'default_profile'],//update & Delete annonce in db
+
 );

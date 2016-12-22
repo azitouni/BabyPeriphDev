@@ -29,14 +29,14 @@ class AnnonceController extends Controller {
       if (!isset($user)) {
         $this->redirectToRoute('connexion_index');
       }
-      $name = htmlentities(strip_tags($_POST['name']));
-      $desc = htmlentities(strip_tags($_POST['desc']));
-      $prix = htmlentities(strip_tags($_POST['prix']));
-      $duree = htmlentities(strip_tags($_POST['duree']));
-      $address = htmlentities(strip_tags($_POST['address']));
-      $city = htmlentities(strip_tags($_POST['city']));
-      $tel = htmlentities(strip_tags($_POST['tel']));
-      $imagePrincipale = htmlentities(strip_tags($_FILES['fichier']['name']));
+      $name = $_POST['name'];
+      $desc = $_POST['desc'];
+      $prix = $_POST['prix'];
+      $duree = $_POST['duree'];
+      $address = $_POST['address'];
+      $city = $_POST['city'];
+      $tel = $_POST['tel'];
+      $imagePrincipale = $_FILES['fichier']['name'];
       $selectTypeAnnonce = $_POST['select_type_annonce'];
       //var_dump($address)
       switch ($selectTypeAnnonce) {
