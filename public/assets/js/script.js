@@ -64,3 +64,35 @@ function initMap() {
   });
 
 }
+
+var t;//on declare le timer
+function bBouge()
+{
+var texte_defilant=document.getElementById('texte_defilant');//ion recupere la balise qui a pour id "texte_defilant"
+
+var pxRight=texte_defilant.style.right.replace('px','');//on recupere le chiffre ( sans le px a la fin )
+
+var taille_texte=texte_defilant.offsetWidth;//offsetWidth c'est la taille du div.
+
+var screenW=document.getElementById('texte_defilant').offsetWidth;//taille de la balise <div> qui contient le msg defilant
+
+if(pxRight==-700-taille_texte)//si les pixels sont arrivés par rapport au bord gauche a la taille du texte ( donnera donc une position negative, du genre -100 )
+
+pxRight=screenW;//on remet le texte a la fin ( tout a droite )
+
+else
+pxRight--;//on baisse les pixels ( ce qui provoque le decalage vers la gauche)
+
+texte_defilant.style.right=pxRight+"px";//on attribue la nouvelle position au texte
+
+t=setTimeout(function(){bBouge(); } ,0.1);//toute les 0.010 secondes on rappele la fonction a l'infini ( recursivement )
+
+}
+
+onload=function(){
+
+document.getElementById('texte_defilant').style.right = document.getElementById('texte_defilant').offsetWidth+'px';
+
+t=setTimeout(function(){bBouge(); } ,0.1);
+
+}

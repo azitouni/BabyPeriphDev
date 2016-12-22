@@ -68,7 +68,7 @@
             <input  type="password" class="form-control" id="pwd" name='password' >
           </div>
           <div class="col-md-8 ">
-          <button type="submit" id="inscription" class="bouton-sinscrire btn-lg">S'Inscrire</button>
+          <button type="submit" id="inscription" class="bouton-sinscrire btn-lg">Mettre à jour</button>
           </div>
         </form>
       </div>

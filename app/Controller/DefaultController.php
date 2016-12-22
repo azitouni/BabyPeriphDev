@@ -191,7 +191,6 @@ class DefaultController extends Controller
 		$city = htmlentities(strip_tags($_POST['city']));
 		$phone = htmlentities(strip_tags($_POST['phone']));
 		$selectTypeUser = $_POST['select_type_user'];
-
 			switch ($selectTypeUser) {
 				case 2:
 					$isPremium =true;
@@ -225,10 +224,11 @@ class DefaultController extends Controller
 																$id);
 
 
-
+		//$userNew = $user->getUserByUsernameOrEmail($email);
 		if (isset($avatar) && strlen($avatar)>0) {
 			$avatar = $userData['id'] .'_' .$avatar;
-			$updateUser = $user->Update(['avatar' => $avatar],$userData['id']);
+			//var_dump($avatar);
+			$updateUser = $userModel->Update(['avatar' => $avatar],$userData['id']);
 
 			$file_name = $_FILES['fichier']['name'];
 			 $destination_folder = '../public/assets/img/avatar/' .$userData['id'] .'_'  .$file_name;
@@ -254,7 +254,7 @@ class DefaultController extends Controller
 	{
 
 		$this->show('default/lostPassword');
-		
+
 	}
 
 
@@ -262,22 +262,12 @@ class DefaultController extends Controller
 
 		$auth = new AuthentificationModel;
 		$user = new UsersModel;
-
-
 		$usernameOrEmail = htmlentities(strip_tags($_POST['email']));
-		
-
-
 		$userNew = $user->getUserByUsernameOrEmail($usernameOrEmail);
 		$token = md5($usernameOrEmail.date('dmY')); //création token??
 		$link = $_SERVER['SERVER_NAME'] . $this->generateUrl('modifier_mdp', ['token' => $token, 'id' => $userNew['id']]);
-
-		
-		
-			
-			//$user = $userModel->find($userId);
-
-			$mail = new PHPMailer; // nouvel objet de type mail
+		//$user = $userModel->find($userId);
+		$mail = new PHPMailer; // nouvel objet de type mail
 		$mail->isSMTP(); // on va se connecter directement au serveur SMTP
 		$mail->isHTML(true); // on va utiliser le format HTML pour le message
 		$mail->Host = "smtp.gmail.com"; // le serveur SMTP utilisé
@@ -300,23 +290,23 @@ class DefaultController extends Controller
 						<h1>Mot de passe perdu</h1>
 						<p>Vous avez signalé votre mot de passe comme oublié. Veuillez
 						cliquer sur le lien suivant pour le réinitialiser.</p>
-						<a href="'.$link.'">réinitialiser mon mot de passe</a> 
+						<a href="'.$link.'">réinitialiser mon mot de passe</a>
 						</body>
 						</html>';
 
 		if(!$mail->send())// si l'envoi délire...
 		{
 			echo 'Erreur envoi : '.$mail->ErrorInfo;
-		} 
+		}
 		else{
 			var_dump($user);
 			$updateUser = $user->Update(['token' => $token],$userNew['id']);
 			echo '<script>
 					alert("vous allez recevoir un mail dans quelques instants.");
-					</script>';	
+					</script>';
 			$this->redirectToRoute('default_home');
 
-		}		
+		}
 	}
 	public function traitementSuccess(){
 		$this->show('default/success');
@@ -343,19 +333,17 @@ class DefaultController extends Controller
 				$auth = new AuthentificationModel;
 				$auth->logUserIn($currentUser);
 				$this->redirectToRoute('default_home');
-	      		
+
 			}else{
 				$_SESSION['erreur'] = 'Veuillez saisir 2 mot de passe identique';
 				$this->redirectToRoute('modifier_mdp',['token' => $token, 'id'=>$id]);
 			}
 
-		}else{ 
+		}else{
 			$_SESSION['erreur'] = 'Veuillez redonner votre Email';
 			$this->redirectToRoute('default_lostPassword');
-			
+
 
 		}
 	}
 }
-
-

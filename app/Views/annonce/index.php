@@ -5,8 +5,6 @@
 <section class="fond">
   <div class="container">
     <div class="row">
-
-
       <div class="col-md-4 descript">
       <p><strong>Seulement quelques secondes pour ajouter une annonce...</strong></p>
     </div>

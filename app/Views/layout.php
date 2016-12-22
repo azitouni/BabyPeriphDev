@@ -25,7 +25,7 @@
 						<li class="item2"><a href="'.$this->url('default_inscription').'">Inscription</a></li>';
 					}
 					else{
-					echo '<li class="item2"> Bienvenue <a href="'.$this->url('default_profile',['id' => $_SESSION['user']['id']]).'">' .$_SESSION['user']['userName']. '<img class="img-responsive img-avatar" src="' .$this->assetUrl('img/avatar/' .$_SESSION['user']['avatar'] ).'" alt="" ></a></li>
+					echo '<li class="item2"> Bienvenue <a href="'.$this->url('default_profile',['id' =>$_SESSION['user']['id']]).'">' .$_SESSION['user']['userName']. '<img class="img-responsive img-avatar" src="' .$this->assetUrl('img/avatar/' .$_SESSION['user']['avatar'] ).'" alt="" ></a></li>
 
 											<li class="item2"><a href="' .$this->url('default_deconnexion') .'"  class="">
 											<span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>';
@@ -40,8 +40,8 @@
 			<div class="col-xs-offset-1 col-xs-10  col-md-8 col-md-offset-2 logo"></div>
 		</div>
 		<div class="row ">
-			<nav class="navbar navbar-default menu">
-				
+			<nav class="navbar navbar-default">
+				<div class="container-fluid menu">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -50,31 +50,24 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<div class="">
-							<a class="navbar-brand " href="<?php echo $this->url('default_home'); ?>"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Accueil</a>
-						</div>
-						
-
-						
+						<a class="navbar-brand" href="<?php echo $this->url('default_home'); ?>">Acceuil</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-						<ul class="nav navbar-nav main-menu col-md-8">
-							
-							
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> Location</a></li>
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>"><i class="fa fa-shopping-basket fa-lg" aria-hidden="true"></i> Vente</a></li>
-							<li class="nav-item espace"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>"><i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i> Services</a></li>
-							<li class="nav-item gogo"><a href="<?php
+						<ul class="nav navbar-nav main-menu">
+							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "location"]); ?>">Location</a></li>
+							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "vente"]); ?>">Vente</a></li>
+							<li class="nav-item"><a href="<?php echo $this->url('Annonce_allAnnonce', ["theme" => "service"]); ?>">Services</a></li>
+							<li class="nav-item"><a href="<?php
 							if (!isset($_SESSION['user'])) {
 								echo '' .$this->url('default_connexion') .'';
 							}
 							else{
 								echo '' .$this->url('Annonce_index') .'';
 							}
-							?>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i> Déposer une annonce</a></li>
+							?>">Déposer une annonce</a></li>
 							<?php if (isset($_SESSION['user'])) {
 								echo '<li class="nav-item"><a href="' .$this->url('Annonce_myAnnonce') .'">Mes annonces</a></li>';
 							}
@@ -87,19 +80,26 @@
 							<button type="submit" class="btn btn-default">Rechercher</button>
 						</form>
 					</div><!-- /.navbar-collapse -->
-				<!-- /.container-fluid -->
+				</div><!-- /.container-fluid -->
 			</nav>
 		</div>
-		
-		
-		
-		
 	</header>
 
 
 	<section class="container">
 			<div class="alert alert-warning titre" >
-  			<h1><?= $this->e($title) ?></h1>
+				<?php if ($this->e($title)==''){?>
+				<h1><div id="slogan" onmouseover="clearTimeout(t);" onmouseout="bBouge()">
+							<span id="texte_defilant">Bienvenue sur BabyPériph !!!</span>
+						</div>
+				</h1>
+
+				<?php
+				}else{
+				?>
+	  			<h1><?= $this->e($title) ?></h1>
+				<?php } ?>
+
   			</div>
 		<?= $this->section('main_content') ?>
 	</section>
@@ -110,27 +110,34 @@
 			<div class="container-fluid">
 				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-2 col-md-offset-2 col-sm-6 footer-nav">
 					<h3 class="">Informations</h3>
-					
+					<ul>
 						<li><a href="">Paiement sécurisé</a></li>
 						<li><a href="">Programme fidélité</a></li>
 						<li><a href="">Nos partenaires</a></li>
 						<li><a href="">Questions fréquentes</a></li>
-					
+					</ul>
 				</div>
-				<div class="col-xs-5 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
+				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
 					<h3 class="">A propos</h3>
-					
+					<ul>
 						<li><a href="">Qui sommes nous ?</a></li>
 						<li><a href="">Avis clients</a></li>
 						<li><a href="">Mentions légales</a></li>
 						<li><a href="<?php echo ''.$this->url('contact_index').''?>">Contact</a></li>
 						<li><a href="">Conditions générales</a></li>
-						<li><a href="">FAQ</a></li>
 						<li><a href=" <?php
 								echo '' .$this->url('default_pourquoiLouer') .'';  ?>">Matériel puériculture: Pourquoi louer?</a></li>
 						<li><a href="<?php echo $this->url('default_sitemap'); ?>">Plan du site</a></li>
 					</ul>
 				</div>
+				<div class="col-xs-12 col-md-3 footer-nav text-center">
+					<h3 class="news">Newsletter</h3>
+					<form class="form-group">
+						<div class="input-group">
+  							<span class="input-group-addon" id="basic-addon1">@</span>
+  							<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+						</div>
+					</form>
 					<ul class="list-inline">
 						<li>
 							<a href="https://www.facebook.com/gino.robertot" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="<?= $this->assetUrl('img/facebook.png') ?>" alt=""></a>
@@ -144,8 +151,8 @@
 					</ul>
 				</div>
 			</div>
+		</div>
 			<div class=" text-center ">
-
 				<p><strong>&copy; 2016 MA<img class ="img-taille" src="<?= $this->assetUrl('img/Mags_team.png') ?>"> GS Team  </strong></p>
 			 </div>
 	</footer>
@@ -154,9 +161,7 @@
 			  integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE="
 			  crossorigin="anonymous">
 	 </script>
-
 	<script src="<?= $this->assetUrl('vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
-
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApPQ7OHH-noQyLM7IMm4kWBR59RNgezus&signed_in=true&libraries=places&callback=initMap"
         async defer></script>
 	<script src="<?= $this->assetUrl('js/script.js') ?>"></script>
