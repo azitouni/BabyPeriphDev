@@ -32,7 +32,7 @@ $w_routes = array(
 	['GET', '/motDePassePerdu/[:token]/[:id]', 'Default#changementMdp','modifier_mdp'],
 	['POST', '/changementMdp', 'Default#traitementChangementMdp','default_changementMdp'],
 	/*page success*/
-	['GET', '/success','Default#traitementSuccess','default_success']
+	['GET', '/success','Default#traitementSuccess','default_success'],
 
 	/*Pourquoi louer?*/
 	['GET', '/pourquoilouer', 'Default#pourquoilouer', 'default_pourquoiLouer'],
@@ -41,7 +41,7 @@ $w_routes = array(
 	['POST', '/envoi-formulaire', 'contact#traitementForm', 'contact_traitementform'],
 
 	/*Profile*/
-	['POST', '/profile/update[:id]', 'Default#updateProfile', 'default_updateProfile'],//update & Delete annonce in db
+	['POST', '/profile/update/[:id]', 'Default#updateProfile', 'default_updateProfile'],//update & Delete annonce in db
 	['GET', '/profile/[:id]', 'Default#profile', 'default_profile'],//update & Delete annonce in db
 
 );
