@@ -3,8 +3,9 @@
 <?php $this->start('main_content') ?>
 
 <section class="fond">
-  <div class="container">
-    <div class="row">
+  <div class="row">
+    <div class="container">
+    
    <div class="col-md-4 sidebar">
       <p >
       Avec mon compte BabyPeriph, je peux déposer mon annonce et recevoir des offres  comme je peux trouver les bonnes occasions !
@@ -25,6 +26,7 @@
       </div>
       <div class="col-md-8 ">    
       <button type="submit" name="button" class="bouton-sinscrire btn-lg"> Connexion </button>
+      <a href="<?php echo $this->url('default_inscription'); ?>">je suis nouveau sur BabyPeriph</a>
       </div>
     </form>
   </div>

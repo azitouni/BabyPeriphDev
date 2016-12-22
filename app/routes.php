@@ -21,4 +21,11 @@ $w_routes = array(
 	['GET', '/connexion', 'Default#connexion', 'default_connexion'],
 	['POST', '/connexion', 'Default#traitementConnexion', 'default_traitementConnexion'],
 	['GET', '/deconnexion', 'Default#deconnexion', 'default_deconnexion'],
+
+	/*Pourquoi louer?*/
+	['GET', '/pourquoilouer', 'Default#pourquoilouer', 'default_pourquoiLouer'],
+	/*envoie message*/
+	['GET', '/contact', 'contact#index', 'contact_index'],
+	['POST', '/envoi-formulaire', 'contact#traitementForm', 'contact_traitementform'],
+	
 );
