@@ -25,7 +25,7 @@
 						<li class="item2"><a href="'.$this->url('default_inscription').'">Inscription</a></li>';
 					}
 					else{
-					echo '<li class="item2"> Bienvenue <a href="#">' .$_SESSION['user']['userName']. '<img class="img-responsive img-avatar" src="' .$this->assetUrl('img/avatar/' .$_SESSION['user']['avatar'] ).'" alt="" ></a></li>
+					echo '<li class="item2"> Bienvenue <a href="'.$this->url('default_profile',['id' => $_SESSION['user']['id']]).'">' .$_SESSION['user']['userName']. '<img class="img-responsive img-avatar" src="' .$this->assetUrl('img/avatar/' .$_SESSION['user']['avatar'] ).'" alt="" ></a></li>
 
 											<li class="item2"><a href="' .$this->url('default_deconnexion') .'"  class="">
 											<span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>';
@@ -120,7 +120,7 @@
 				</div>
 				<div class="col-xs-12 col-md-3 footer-nav text-center">
 					<h3 class="news">Nous contacter</h3>
-					
+
 					<form class="form-group">
 						<div class="input-group">
   							<span class="input-group-addon" id="basic-addon1">@</span>
@@ -132,11 +132,11 @@
 						</div>
 					</form>
 
-					
-					
-						
-						
-					
+
+
+
+
+
 					<ul class="list-inline">
 						<li>
 							<a href="https://www.facebook.com/gino.robertot" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="<?= $this->assetUrl('img/facebook.png') ?>" alt=""></a>
@@ -152,21 +152,21 @@
 			</div>
 		</div>
 
-		
+
 			<div class=" text-center ">
 
 				<p><strong>&copy; 2016 MA<img class ="img-taille" src="<?= $this->assetUrl('img/Mags_team.png') ?>"> GS Team  </strong></p>
 			 </div>
-		
+
 	</footer>
 	<script
 			  src="https://code.jquery.com/jquery-1.11.1.min.js"
 			  integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE="
-			  crossorigin="anonymous">  	
+			  crossorigin="anonymous">
 	 </script>
 
 	<script src="<?= $this->assetUrl('vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
-	
+
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApPQ7OHH-noQyLM7IMm4kWBR59RNgezus&signed_in=true&libraries=places&callback=initMap"
         async defer></script>
 	<script src="<?= $this->assetUrl('js/script.js') ?>"></script>

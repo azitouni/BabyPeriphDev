@@ -79,7 +79,7 @@ class DefaultController extends Controller
 																'isProfessional' => $isProfessional,
 																'password' => $password]);
 
-		
+
 
 		if (isset($avatar) && strlen($avatar)>0) {
 			$avatar = $userData['id'] .'_' .$avatar;
@@ -152,4 +152,85 @@ public function deconnexion()
 
 }
 
+public function profile($id){
+
+	$userModel = new UsersModel();
+	$user = $userModel->find($id);
+	$this->show('default/profile',['user'=>$user]);
+
+}
+
+public function updateProfile($id){
+	$userModel = new UsersModel();
+	$user = $userModel->find($id);
+	$auth = new AuthentificationModel;
+	$lastName = htmlentities(strip_tags($_POST['lastName']));
+	$firstName = htmlentities(strip_tags($_POST['firstName']));
+	$username = htmlentities(strip_tags($_POST['username']));
+	$email = htmlentities(strip_tags($_POST['email']));
+	$avatar = htmlentities(strip_tags($_FILES['fichier']['name']));
+	// var_dump($_FILES);
+	// var_dump($avatar);
+	$address = htmlentities(strip_tags($_POST['address']));
+	$postalCode = htmlentities(strip_tags($_POST['postalCode']));
+	$city = htmlentities(strip_tags($_POST['city']));
+	$phone = htmlentities(strip_tags($_POST['phone']));
+	$selectTypeUser = $_POST['select_type_user'];
+
+		switch ($selectTypeUser) {
+			case 2:
+				$isPremium =true;
+				$isProfessional =false;
+				break;
+			case 3:
+				$isPremium =false;
+				$isProfessional =true;
+				break;
+			default:
+			$isPremium =false;
+			$isProfessional =false;
+			break;
+		}
+		if (isset($_POST['password'])) {
+			$password=$auth->hashPassword($_POST['password']);
+		}
+
+	$userData = $userModel->Update([ 'lastName' => $lastName,
+															'firstName' => $firstName,
+															'username' => $username,
+															'email' => $email,
+															'address' => $address,
+															//'avatar' => $avatar,
+															'postalCode' => $postalCode,
+															'city' => $city,
+															'phone' =>$phone,
+															'isPremium' => $isPremium,
+															'isProfessional' => $isProfessional,
+															'password' => $password],
+															$id);
+
+
+
+	if (isset($avatar) && strlen($avatar)>0) {
+		$avatar = $userData['id'] .'_' .$avatar;
+		$updateUser = $user->Update(['avatar' => $avatar],$userData['id']);
+
+		$file_name = $_FILES['fichier']['name'];
+		 $destination_folder = '../public/assets/img/avatar/' .$userData['id'] .'_'  .$file_name;
+		 $tmp = $_FILES['fichier']['tmp_name'];
+		 if (!move_uploaded_file($tmp,$destination_folder)) {
+			 $erreur = 'Erreur, impossible de copier le fichier dans:' .$destination_folder;
+			 exit($erreur);
+		 }
+	}
+	if (isset($userData) && $userData['id'] !==0) {
+		$userModel = new UsersModel();
+		$user = $userModel->find($userData['id']);
+		$auth->logUserIn($user);
+		$this->redirectToRoute('default_home');
+	}
+	else {
+		$this->redirectToRoute('default_home');
+	}
+}
 }

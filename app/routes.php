@@ -21,4 +21,7 @@ $w_routes = array(
 	['GET', '/connexion', 'Default#connexion', 'default_connexion'],
 	['POST', '/connexion', 'Default#traitementConnexion', 'default_traitementConnexion'],
 	['GET', '/deconnexion', 'Default#deconnexion', 'default_deconnexion'],
+	/*Profile*/
+	['POST', '/profile/update[:id]', 'Default#updateProfile', 'default_updateProfile'],//update & Delete annonce in db
+	['GET', '/profile/[:id]', 'Default#profile', 'default_profile'],//update & Delete annonce in db
 );
