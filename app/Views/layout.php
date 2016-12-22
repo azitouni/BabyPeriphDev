@@ -112,23 +112,19 @@
 						<li><a href="">Qui sommes nous ?</a></li>
 						<li><a href="">Avis clients</a></li>
 						<li><a href="">Mentions légales</a></li>
+						<li><a href="<?php echo ''.$this->url('contact_index').''?>">Contact</a></li>
 						<li><a href="">Conditions générales</a></li>
-						<li><a href="">Contact</a></li>
-						<li><a href="">FAQ</a></li>
+						<li><a href=" <?php
+								echo '' .$this->url('default_pourquoiLouer') .'';  ?>">Matériel puériculture: Pourquoi louer?</a></li>
 						<li><a href="">Plan du site</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-md-3 footer-nav text-center">
-					<h3 class="news">Nous contacter</h3>
-
+					<h3 class="news">Newsletter</h3>
 					<form class="form-group">
 						<div class="input-group">
   							<span class="input-group-addon" id="basic-addon1">@</span>
   							<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-						</div> <br>
-						<textarea cols="40" rows="5" class="form-control"></textarea>
-						<div class="form-group">
-							<input class="btn btn-default bouton-news" type="submit" name="">
 						</div>
 					</form>
 

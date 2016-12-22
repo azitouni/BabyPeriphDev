@@ -104,7 +104,7 @@ class DefaultController extends Controller
 		}
 	}
 
-	/**
+/**
  * Page connexion
  */
 public function connexion()
@@ -150,6 +150,14 @@ public function deconnexion()
 	$auth->logUserOut();
 	$this->redirectToRoute('default_home');
 
+}
+
+/**
+ * Page Pourquoi louer?
+ */
+public function pourquoilouer()
+{
+	$this->show('default/pourquoilouer');
 }
 
 public function profile($id){
@@ -233,4 +241,5 @@ public function updateProfile($id){
 		$this->redirectToRoute('default_home');
 	}
 }
+
 }
