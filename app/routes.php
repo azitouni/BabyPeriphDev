@@ -36,6 +36,8 @@ $w_routes = array(
 
 	/*Pourquoi louer?*/
 	['GET', '/pourquoilouer', 'Default#pourquoilouer', 'default_pourquoiLouer'],
+	/* Qui sommes nous?*/
+	['GET', '/quisommesnous', 'Default#quisommesnous', 'default_quisommesnous'],
 	/*envoie message*/
 	['GET', '/contact', 'contact#index', 'contact_index'],
 	['POST', '/envoi-formulaire', 'contact#traitementForm', 'contact_traitementform'],

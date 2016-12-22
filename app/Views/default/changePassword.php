@@ -17,7 +17,7 @@
 			<input type="password" id="mdp2" name="pass2" class="form-control" />
 			</div>
 			<div class="form-group text-center">
-			<input type="submit"  name="btnSub" class="btn btn-lg btn-success" value="Enregistrer" />
+			<input type="submit"  name="btnSub" class="btn btn-lg bouton-sinscrire" value="Enregistrer" />
 			</div>
 		  </form>
 <?php $this->stop('main_content') ?>

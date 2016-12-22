@@ -5,7 +5,7 @@
   echo '<h1>' . $_SESSION['erreur'] . '</h1>';
   unset($_SESSION['success']);
 } ?>
-<form method="post" action="<?= $this->url('default_traitementLost') ?>">  
+<form method="post" action="<?= $this->url('default_traitementLost') ?>">
   <div class="row">
     <div class="col-md-offset-4 col-md-4">
 	  <div class="form-group">
@@ -13,8 +13,8 @@
 		<input type="email" name="email" id="mail" class="form-control" required />
   	  </div>
   	  <div class="form-group text-center">
-    	<input type="submit" name="btnSub" value="Envoyer" 
-    	 	   class="btn btn-lg btn-success" />
+    	<input type="submit" name="btnSub" value="Envoyer"
+    	 	   class="btn btn-lg  bouton-sinscrire" />
   	  </div>
   	</div>
   </div>

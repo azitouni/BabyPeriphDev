@@ -167,6 +167,15 @@ class DefaultController extends Controller
 		$this->show('default/pourquoilouer');
 	}
 
+	/**
+	 * Page Qui sommes nous?
+	 */
+	public function quisommesnous()
+	{
+		$this->show('default/quisommesnous');
+	}
+
+
 	public function profile($id){
 
 		$userModel = new UsersModel();

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Courgette');
 body{
 	background-color: #fefdf0;
 }
@@ -8,7 +9,7 @@ header{
 }
 
 footer{
- background-color: #FF6347;
+ background-color: #e99047;
 
 }
 
@@ -421,6 +422,9 @@ h3{
  color: #C73516;
  font-weight: bold;
 }
+.fond1 h2{
+	font-family: 'Courgette', cursive;
+}
 .img-annonce{
  height: 200px;
  padding-left: 50px;
@@ -548,8 +552,7 @@ main{
 .inscriptionUser-ajoutAnnonce a{
   color:#FF4500;
 }
-.descript{
- margin-top: 200px;
+
 
 
    font-family: 'Open Sans', sans-serif;
@@ -569,7 +572,7 @@ main{
 
 
 .fond{
- background-color: #FFDAB9;
+background-color: #FFDAB9;
  margin-bottom: 25px;
 }
 .inscript-icone{
@@ -593,7 +596,11 @@ color: #fff;
    background: linear-gradient( #DF6D14, #F32F05);
 
 }
-
+.descript{
+	margin-top: 200px;
+	font-family: 'Courgette', cursive;
+	font-size: 145%;
+}
 .bottom{
 	margin-bottom: 25px;
 }
@@ -630,4 +637,22 @@ color: #fff;
 #texte_defilant{
 	position: relative;
 	margin-top: 10px;
+}
+.posMags{
+	margin-top: 70px;
+	margin-left: 353px;
+	margin-bottom: 50px;
+}
+.equipeMags{
+	padding-bottom: 100px;
+	font-family: 'Courgette', cursive;
+	font-size: 170%;
+}
+.equipeMags a{
+	color: #75310f;
+}
+.logoTeam{
+	height: 100px;
+
+/*	margin-left: 500px;*/
 }

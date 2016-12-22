@@ -120,7 +120,7 @@
 				<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-3 col-sm-6 footer-nav">
 					<h3 class="">A propos</h3>
 					<ul>
-						<li><a href="">Qui sommes nous ?</a></li>
+						<li><a href="<?php echo $this->url('default_quisommesnous');?>">Qui sommes nous ?</a></li>
 						<li><a href="">Avis clients</a></li>
 						<li><a href="">Mentions légales</a></li>
 						<li><a href="<?php echo ''.$this->url('contact_index').''?>">Contact</a></li>
@@ -132,15 +132,20 @@
 				</div>
 				<div class="col-xs-12 col-md-3 footer-nav text-center">
 					<h3 class="news">Newsletter</h3>
-					<form class="form-group">
-						<div class="input-group">
-  							<span class="input-group-addon" id="basic-addon1">@</span>
-  							<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-						</div>
+
+					<form class="form-inline">
+							  <div class="form-group">
+							    <label class="sr-only" for="exampleInputAmount"></label>
+							    <div class="input-group">
+							      <div class="input-group-addon">@</div>
+							      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Entrer votre email">
+									</div>
+							  </div>
+							  <button type="submit" class="btn btn-primary">ok</button>
 					</form>
-					<ul class="list-inline">
+					<ul class="list-inline smallPadding">
 						<li>
-							<a href="https://www.facebook.com/gino.robertot" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="<?= $this->assetUrl('img/facebook.png') ?>" alt=""></a>
+							<a href="https://www.facebook.com/" title="Suivez moi sur Facebook" target="_blank"><img class="img-taille" src="<?= $this->assetUrl('img/facebook.png') ?>" alt=""></a>
 						</li>
 						<li>
 							<a href="#"><img class="img-taille" src="<?= $this->assetUrl('img/google plus.png') ?>" alt=""></a>
@@ -153,7 +158,7 @@
 			</div>
 		</div>
 			<div class=" text-center ">
-				<p><strong>&copy; 2016 MA<img class ="img-taille" src="<?= $this->assetUrl('img/Mags_team.png') ?>"> GS Team  </strong></p>
+				<p><strong>&copy; 2016 MAGS<img class ="img-taille" src="<?= $this->assetUrl('img/Mags_team.png') ?>"> Team  </strong></p>
 			 </div>
 	</footer>
 	<script

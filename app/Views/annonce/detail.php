@@ -24,15 +24,18 @@
     echo '<div class="col-md-6">
     <h3>' .$detailAnnonce['annonceName'] .'</h3>
 		<h5>
-			<span> Ville : <span>' .$detailAnnonce['annonceCity']  .'</span>
+			<span><strong> Ville : </strong><span>' .$detailAnnonce['annonceCity']  .'</span>
 				<button type="submit" name="locateBtn" id="locateBtn" ><i class="fa fa-map-marker text-right" aria-hidden="true"></i></button>
 			</span>
 		</h5>
 		<h5>
-			<span> Prix : <span>' .$detailAnnonce['prix'] .' (€)</span></span>
+			<span><strong> Prix : <span>' .$detailAnnonce['prix'] .' (€)</strong></span></span>
 		</h5>
 		<h5>
-			<span> Tél : <span>' .$detailAnnonce['annoncePhone'] .'</span></span>
+			<span><strong> Durée : </strong><span>' .$detailAnnonce['dureeDuPrix'] .' </span></span>
+		</h5>
+		<h5>
+			<span><strong> Tél :</strong> <span>' .$detailAnnonce['annoncePhone'] .'</span></span>
 		</h5>
 		<h6>
     <h4><strong> Description :</strong> </h4>

@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'B']) ?>
+<?php $this->layout('layout', ['title' => '']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -103,18 +103,18 @@
 </div> <!-- end sidetab container -->
 
 <section class="container-fluid fond1">
-     <div class="row">
+     <div class="row ">
        <div id="location-puericulture" class="col-xs-12 col-md-4 bordure1">
-         <h2>Besoin de matériel pour votre bébé?</h2>
-         <p>Lorem Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+         <h2>Location</h2>
+         <p>Besoin temporairement de matériel pour bébé, une poussette devenue inutile ?la rubrique location vous met à disposition une liste d'annonces et la possibiliter  d'en créer vous même..</p>
        </div>
       <div id="service-nounou" class="col-xs-12 col-md-4 bordure1">
-        <h2>Besoin d'une nounou?</h2>
-        <p>Lorem Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <h2>Vente</h2>
+        <p>Vous voulez vous séparer de votre bien definitivement ? la location ne vous convient plus ? la rubrique vente vous aidera à offrir une deuxieme vie à votre biberon.</p>
        </div>
        <div id="service-maman" class="col-xs-12 col-md-4 bordure1">
-         <h2>Espace Maman.....</h2>
-         <p>Lorem Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh</p>
+         <h2>Service</h2>
+         <p>Une sortie  planifiée, un planning chargé besoin d'une nounou la rubrique services est faite pour vous ! </p>
        </div>
      </div>
 

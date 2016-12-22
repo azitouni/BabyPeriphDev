@@ -50,14 +50,17 @@
             <label for="tel">Télephone : </label>
             <input type="text" class="form-control" id="tel" name='tel'  value="<?php if(isset($detailAnnonce)){echo $detailAnnonce['annoncePhone'];}  ?>" required>
           </div>
-          <?php if (!isset($detailAnnonce)){
-            echo '<button type="submit" id="validerBtn" name="validBtn" class="bouton-sinscrire btn-lg"> Valider </button>';
-            }
-          else {
-            echo '<button type="submit" id="majBtn" name="updateBtn" class="btn btn-warning"> Mettre à jour </button>';
-          } ?>
+          <div class="col-md-8 form-group text-center smallPadding">
+            <?php if (!isset($detailAnnonce)){
+
+              echo '<button type="submit" id="validerBtn" name="validBtn" class="btn btn-lg  bouton-sinscrire"> Valider </button>';
+              }
+            else {
+              echo '<button type="submit" id="majBtn" name="updateBtn" class="bouton-sinscrire btn btn-warning"> Mettre à jour </button>';
+            } ?>
           </div>
         </form>
+        </div>
       </div>
     </div>
   </div>
